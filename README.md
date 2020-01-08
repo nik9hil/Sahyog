@@ -1,2 +1,2 @@
 # Sahyog
-Smart Animal Healthaid - be Your Own Guide (SAHYOG) !
+Smart animal Assistance and Healthaid - be Your Own Guide (SAHYOG) !
