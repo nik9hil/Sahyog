@@ -15,6 +15,7 @@ config = {
 }
 firebase = pyrebase.initialize_app(config)
 authenticate = firebase.auth()
+print("AUTHENTICATE:",authenticate)
 
 def login(request):
 	return render(request,'authentication/login.html')
@@ -25,15 +26,34 @@ def sahyog(request):
 	try:
 		user = authenticate.sign_in_with_email_and_password(email,password)
 	except:
+		try:
+			if request.session['uid']:
+				email = request.session['email']
+				context = {
+					'email' : email
+				}
+				return render(request,'home/home.html',context)
+		except:
+			message = "You are logged out. Log in again."
+			context = {
+				'message' : message
+			}
+			return render(request,'authentication/login.html',context)
 		message = "Invalid Credentials. Please try again."
 		context = {
 			'message' : message
 		}
 		return render(request,"authentication/login.html",context)
 	session_id = user['idToken']
+	print(user)
 	request.session['uid'] = str(session_id)
-	return render(request,'home/home.html',{'email':email})
+	request.session['email'] = str(user['email'])
+	context = {
+		'email' : email
+	}
+	return render(request,'home/home.html',context)
 
 def logout(request):
 	auth.logout(request)
+	print(firebase)
 	return render(request,'authentication/login.html')
