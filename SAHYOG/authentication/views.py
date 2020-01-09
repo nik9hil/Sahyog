@@ -47,8 +47,10 @@ def sahyog(request):
 	session_id = user['idToken']
 	request.session['uid'] = str(session_id)
 	request.session['email'] = str(user['email'])
+	message = "You are logged in"
 	context = {
-		'email' : email
+		'email' : email,
+		'message' : message
 	}
 	return render(request,'home/home.html',context)
 
@@ -73,12 +75,14 @@ def postsignup(request):
 		}
 		return render(request,'authentication/signup.html',context)
 	uid = user['localId']
-
+	message = "Account created successfully."
 	data = {
 		'name':name,
 		'regnumber' : regnumber,
 		'status':'1'
 	}
-
+	context = {
+		'message' : message
+	}
 	database.child('users').child(uid).child('details').set(data)
-	return render(request,'authentication/login.html')
+	return render(request,'authentication/login.html',context)

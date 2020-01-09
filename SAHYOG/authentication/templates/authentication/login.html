@@ -1,9 +1,9 @@
 {% extends 'home/base.html' %}
 {% block content %}
   {% if message %}
-    <script>
-      alert('{{ message }}');
-    </script>
+    <div class="alert alert-danger" role="alert">
+      {{message}}
+    </div>
   {% endif %}
   <div class="container">
     <div class="col-md-12" style="padding-top: 15%;padding-left: 5%">

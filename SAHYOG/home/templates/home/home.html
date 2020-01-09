@@ -1,4 +1,8 @@
 {% extends 'home/base.html' %}
 {% block content %}
-<b>YO NIGGA</b>
+	{% if message %}
+		<div class="alert alert-success" role="alert">
+		  {{message}} as {{email}}
+		</div>
+	{% endif %}
 {% endblock content %}
