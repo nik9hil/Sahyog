@@ -6,13 +6,17 @@
     </script>
   {% endif %}
   <div class="container">
-    <div class="col-md-12" style="padding-top: 15%;padding-left: 5%">
+    <div class="col-md-12" style="padding-top: 10%;padding-left: 5%">
       <div class="card border shadow mx-sm-10 p-3">
         <h4 style="color:blue">Sign In:</h4><hr>
         <div class="text-info text mt-2">
-            <form action="/sahyog/" method="post">
+            <form action="/postsignup/" method="post">
               {% csrf_token %}
               <div class="form-group">
+                <label for="exampleInputEmail1">Name:</label>
+                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+                <label for="exampleInputEmail1">Registration Number:</label>
+                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="regnumber">
                 <label for="exampleInputEmail1">Email address:</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -21,9 +25,9 @@
                 <label for="exampleInputPassword1">Password:</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" name="password">
               </div>
-              <button type="submit" class="btn btn-primary">Log In</button>
+              <button type="submit" class="btn btn-primary">Sign Up</button>
             </form><br>
-            <a href="{% url 'signup' %}">Not a member? Sign Up</a>
+            <a href="{% url 'login' %}">Already a member? Log in</a>
         </div>
       </div>
     </div>

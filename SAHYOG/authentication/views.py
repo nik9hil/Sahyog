@@ -15,7 +15,7 @@ config = {
 }
 firebase = pyrebase.initialize_app(config)
 authenticate = firebase.auth()
-print("AUTHENTICATE:",authenticate)
+database = firebase.database()
 
 def login(request):
 	return render(request,'authentication/login.html')
@@ -45,7 +45,6 @@ def sahyog(request):
 		}
 		return render(request,"authentication/login.html",context)
 	session_id = user['idToken']
-	print(user)
 	request.session['uid'] = str(session_id)
 	request.session['email'] = str(user['email'])
 	context = {
@@ -55,5 +54,31 @@ def sahyog(request):
 
 def logout(request):
 	auth.logout(request)
-	print(firebase)
+	return render(request,'authentication/login.html')
+
+def signup(request):
+	return render(request,'authentication/signup.html')
+
+def postsignup(request):
+	name = request.POST.get('name')
+	regnumber = request.POST.get('regnumber')
+	email = request.POST.get('email')
+	password = request.POST.get('password')
+	try:
+		user = authenticate.create_user_with_email_and_password(email,password)
+	except:
+		message = "Unable to create account. Try again."
+		context = {
+			'message' : message
+		}
+		return render(request,'authentication/signup.html',context)
+	uid = user['localId']
+
+	data = {
+		'name':name,
+		'regnumber' : regnumber,
+		'status':'1'
+	}
+
+	database.child('users').child(uid).child('details').set(data)
 	return render(request,'authentication/login.html')
