@@ -6,7 +6,7 @@
     </div>
   {% endif %}
   <div class="container">
-    <div class="col-md-12" style="padding-top: 10%;padding-left: 5%">
+    <div class="col-md-12" style="padding-top: 3%;padding-left: 5%">
       <div class="card border shadow mx-sm-10 p-3">
         <h4 style="color:blue">Sign Up:</h4><hr>
         <div class="text-info text mt-2">
@@ -16,14 +16,25 @@
                 <label for="exampleInputEmail1">Name:</label>
                 <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
                 <label for="exampleInputEmail1">Registration Number:</label>
-                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="regnumber">
+                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="regnumber"><br>
+                <label style="">Select the Organisation Type:</label>
+                <select class="selectpicker" data-style="btn-info" name="organisation">
+                  <option>NGO</option>
+                  <option>Government Organisation</option>
+                  <option>Vets</option>
+                  <option>Ambulance</option>  
+                </select><br>
+                <label for="exampleInputEmail1">Area of service:</label>
+                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="serviceHelp" name="service">
+                <small id="serviceHelp" class="form-text text-danger">Create a seperate account for each branch.</small>
                 <label for="exampleInputEmail1">Email address:</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <small id="emailHelp" class="form-text text-danger">We'll never share your email with anyone else.</small>
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password:</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp" name="password">
+                <small id="passwordHelp" class="form-text text-danger">Do not share your password with anyone.</small>
               </div>
               <button type="submit" class="btn btn-primary">Sign Up</button>
             </form><br>

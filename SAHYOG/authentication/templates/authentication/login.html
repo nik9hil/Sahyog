@@ -1,12 +1,18 @@
 {% extends 'home/base.html' %}
 {% block content %}
   {% if message %}
-    <div class="alert alert-danger" role="alert">
-      {{message}}
-    </div>
+    {% if success %}
+      <div class="alert alert-success" role="alert">
+        {{message}}
+      </div>
+    {% else %}
+      <div class="alert alert-danger" role="alert">
+        {{message}}
+      </div>
+    {% endif %}
   {% endif %}
   <div class="container">
-    <div class="col-md-12" style="padding-top: 15%;padding-left: 5%">
+    <div class="col-md-12" style="padding-top: 10%;padding-left: 5%">
       <div class="card border shadow mx-sm-10 p-3">
         <h4 style="color:blue">Sign In:</h4><hr>
         <div class="text-info text mt-2">

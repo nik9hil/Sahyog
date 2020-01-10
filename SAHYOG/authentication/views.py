@@ -64,6 +64,8 @@ def signup(request):
 def postsignup(request):
 	name = request.POST.get('name')
 	regnumber = request.POST.get('regnumber')
+	organisation = request.POST.get('organisation')
+	service = request.POST.get('service')
 	email = request.POST.get('email')
 	password = request.POST.get('password')
 	try:
@@ -76,13 +78,17 @@ def postsignup(request):
 		return render(request,'authentication/signup.html',context)
 	uid = user['localId']
 	message = "Account created successfully."
+	success = True
 	data = {
 		'name':name,
 		'regnumber' : regnumber,
+		'organisation' : organisation,
+		'service' : service,
 		'status':'1'
 	}
 	context = {
-		'message' : message
+		'message' : message,
+		'success' : success
 	}
 	database.child('users').child(uid).child('details').set(data)
 	return render(request,'authentication/login.html',context)
