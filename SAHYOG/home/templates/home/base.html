@@ -36,7 +36,9 @@
 		              </a>
 		              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 				        <a class="dropdown-item" href="{% url 'eventsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Event</a>
-		                <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>&emsp;Log out</a>
+				        {% if email %}
+		                	<a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>&emsp;Log out</a>
+		              	{% endif %}
 		              </div>
 		            </li>
 	            </ul>
