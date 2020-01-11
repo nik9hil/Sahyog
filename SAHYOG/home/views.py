@@ -21,4 +21,9 @@ database = firebase.database()
 # Create your views here.
 
 def home(request):
-	return redirect('sahyog')
+	a = authenticate.get_account_info(request.session['uid'])
+	a = a['users'][0]['email']
+	context = {
+		'email' : a
+	}
+	return render(request,'home/home.html',context)

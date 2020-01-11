@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+{% block content %}
+<div class="container">
+	<br><h3>My Events</h3><hr>
+	{% for eventName,date,startTime,endTime,address,description in event_list %}
+		<li>{{eventName}}</li>
+		{{date}}<br>{{startTime}}<br>{{endTime}}<br>
+		{{address}}<br>{{description}}<br>
+	{% endfor %}
+	<br><h3>Other Events</h3><hr>
+	{% for eventName,date,startTime,endTime,address,description in all_events_list %}
+		<li>{{eventName}}</li>
+		{{date}}<br>{{startTime}}<br>{{endTime}}<br>
+		{{address}}<br>{{description}}<br>
+	{% endfor %}
+</div>
+{% endblock content %}
