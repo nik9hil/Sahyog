@@ -16,7 +16,7 @@ config = {
 firebase = pyrebase.initialize_app(config)
 authenticate = firebase.auth()
 database = firebase.database()
-
+print(database)
 def login(request):
 	return render(request,'authentication/login.html')
 
@@ -55,7 +55,10 @@ def sahyog(request):
 	return render(request,'home/home.html',context)
 
 def logout(request):
-	auth.logout(request)
+	try:
+		del request.session['uid']
+	except KeyError:
+		pass
 	return render(request,'authentication/login.html')
 
 def signup(request):
@@ -81,6 +84,7 @@ def postsignup(request):
 	success = True
 	data = {
 		'name':name,
+		'email':email,
 		'regnumber' : regnumber,
 		'organisation' : organisation,
 		'service' : service,

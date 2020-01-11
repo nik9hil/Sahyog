@@ -9,4 +9,6 @@ urlpatterns = [
     path('',include('home.urls')),
     #Authentication
     path('',include('authentication.urls')),
+    #Events
+    path('',include('events.urls')),
 ]
