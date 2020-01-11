@@ -38,7 +38,6 @@ def eventsubmit(request):
 		a = a['users']
 		a = a[0]
 		a = a['localId']
-
 		data = {
 			"eventName" : eventName,
 			"date" : date,
@@ -51,7 +50,7 @@ def eventsubmit(request):
 		context = {
 			'email' : email
 		}
-		return render(request,'home/home/html',context)
+		return render(request,'home/home.html',context)
 	except KeyError:
 		message = "Oops! User logged out. Please log in again."
 		context = {

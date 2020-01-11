@@ -16,7 +16,6 @@ config = {
 firebase = pyrebase.initialize_app(config)
 authenticate = firebase.auth()
 database = firebase.database()
-print(database)
 def login(request):
 	return render(request,'authentication/login.html')
 
@@ -80,6 +79,7 @@ def postsignup(request):
 		}
 		return render(request,'authentication/signup.html',context)
 	uid = user['localId']
+	idtoken = user['idToken']
 	message = "Account created successfully."
 	success = True
 	data = {
@@ -94,5 +94,5 @@ def postsignup(request):
 		'message' : message,
 		'success' : success
 	}
-	database.child('users').child(uid).child('details').set(data)
+	database.child('users').child(uid).child('details').set(data,idtoken)
 	return render(request,'authentication/login.html',context)
