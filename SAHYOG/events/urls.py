@@ -8,4 +8,5 @@ urlpatterns = [
 	path(r'eventsform/',views.eventsform,name='eventsform'),
 	path(r'eventsubmit/',views.eventsubmit,name='eventsubmit'),
 	path(r'events/',views.events,name='events'),
+	path(r'deleteevent/',views.deleteevent,name='deleteevent'),
 ]
