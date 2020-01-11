@@ -26,9 +26,10 @@ def eventsform(request):
 def eventsubmit(request):
 	eventName = request.POST.get('eventName')
 	date = request.POST.get('date')
-	placeName = request.POST.get('placeName')
+	address = request.POST.get('placeName')
 	description = request.POST.get('description')
-
+	startTime = request.POST.get('startTime')
+	endTime = request.POST.get('endTime')
 	tz = pytz.timezone('Asia/Kolkata')
 	time_now = datetime.now(timezone.utc).astimezone(tz)
 	millis = int(time.mktime(time_now.timetuple()))
@@ -41,16 +42,19 @@ def eventsubmit(request):
 		data = {
 			"eventName" : eventName,
 			"date" : date,
-			"placeName" : placeName,
-			"description" : description
+			"startTime" : startTime,
+			"endTime" : endTime,
+			"address" : address,
+			"description" : description,
 		}
 
 		database.child('users').child(a).child('events').child(millis).set(data,idtoken)
-		email = database.child('users').child(a).child('details').child('name').get(idtoken).val()
+		email = database.child('users').child(a).child('details').child('email').get().val()
+		print(email)
 		context = {
 			'email' : email
 		}
-		return render(request,'home/home.html',context)
+		return redirect('home')
 	except KeyError:
 		message = "Oops! User logged out. Please log in again."
 		context = {
