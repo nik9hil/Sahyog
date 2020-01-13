@@ -15,7 +15,7 @@ def index(request):
 
         search_params = {
             'part' : 'snippet',
-            'q' : request.POST['search'],
+            'q' : 'pet animals first aid' + request.POST['search'],
             'key' : settings.YOUTUBE_DATA_API_KEY,
             'maxResults' : 9,
             'type' : 'video'

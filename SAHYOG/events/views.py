@@ -72,6 +72,8 @@ def eventsubmit(request):
 		return render(request,'authentication/login.html',context)
 
 def events(request):
+	dummyURL = database.child('firstAid').shallow().get().val()
+	print(dummyURL)
 	try:
 		idtoken = request.session['uid']
 		a = authenticate.get_account_info(idtoken)
@@ -87,6 +89,7 @@ def events(request):
 			for i in timestamps:
 				lis_time.append(i)
 			lis_time.sort(reverse=True)
+			print(lis_time)
 			eventName = []
 			date = []
 			startTime = []
@@ -94,20 +97,25 @@ def events(request):
 			address = []
 			description = []
 			for i in lis_time:
-				ename = database.child('users').child(a).child('events').child(i).child('eventName').get().val()
-				dat = database.child('users').child(a).child('events').child(i).child('date').get().val()
-				stime = database.child('users').child(a).child('events').child(i).child('startTime').get().val()
-				etime = database.child('users').child(a).child('events').child(i).child('endTime').get().val()
-				addr = database.child('users').child(a).child('events').child(i).child('address').get().val()
-				descr = database.child('users').child(a).child('events').child(i).child('description').get().val()
-				eventName.append(ename)
-				date.append(dat)
-				startTime.append(stime)
-				endTime.append(etime)
-				address.append(addr)
-				description.append(descr)
+				try:
+					ename = database.child('users').child(a).child('events').child(i).child('eventName').get().val()
+					dat = database.child('users').child(a).child('events').child(i).child('date').get().val()
+					stime = database.child('users').child(a).child('events').child(i).child('startTime').get().val()
+					etime = database.child('users').child(a).child('events').child(i).child('endTime').get().val()
+					addr = database.child('users').child(a).child('events').child(i).child('address').get().val()
+					descr = database.child('users').child(a).child('events').child(i).child('description').get().val()
+					eventName.append(ename)
+					date.append(dat)
+					startTime.append(stime)
+					endTime.append(etime)
+					address.append(addr)
+					description.append(descr)
+				except:
+					print("Couldn't fetch the shallow tree")
 			event_list = zip(eventName,date,startTime,endTime,address,description,lis_time)
+			print(event_list)
 		allusers = database.child('users').shallow().get().val()
+		print(allusers)
 		if allusers != None:
 			users = []
 			for i in allusers:
@@ -126,21 +134,24 @@ def events(request):
 				alluserevents = database.child('users').child(i).child('events').shallow().get().val()
 				user_events.append(alluserevents)
 				for j in user_events[-1]:
-					ename = database.child('users').child(i).child('events').child(j).child('eventName').get().val()
-					dat = database.child('users').child(i).child('events').child(j).child('date').get().val()
-					stime = database.child('users').child(i).child('events').child(j).child('startTime').get().val()
-					etime = database.child('users').child(i).child('events').child(j).child('endTime').get().val()
-					addr = database.child('users').child(i).child('events').child(j).child('address').get().val()
-					descr = database.child('users').child(i).child('events').child(j).child('description').get().val()
-					eventName.append(ename)
-					date.append(dat)
-					startTime.append(stime)
-					endTime.append(etime)
-					address.append(addr)
-					description.append(descr)
+					try:
+						ename = database.child('users').child(i).child('events').child(j).child('eventName').get().val()
+						dat = database.child('users').child(i).child('events').child(j).child('date').get().val()
+						stime = database.child('users').child(i).child('events').child(j).child('startTime').get().val()
+						etime = database.child('users').child(i).child('events').child(j).child('endTime').get().val()
+						addr = database.child('users').child(i).child('events').child(j).child('address').get().val()
+						descr = database.child('users').child(i).child('events').child(j).child('description').get().val()
+						eventName.append(ename)
+						date.append(dat)
+						startTime.append(stime)
+						endTime.append(etime)
+						address.append(addr)
+						description.append(descr)
+					except:
+						print("Could not fetch the shallow tree")
 
 			all_events_list = zip(eventName,date,startTime,endTime,address,description)
-
+		print(all_events_list)
 		context = {
 			'event_list' : event_list,
 			'all_events_list' : all_events_list,
