@@ -1,0 +1,104 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - rescue_animal
+  - animal_type
+  - pincode
+  - donate
+  - ngo_name
+  - name
+  - email
+  - amount
+
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_animal_type
+- utter_pincode
+- utter_list
+- utter_sorry
+- utter_ngo
+- utter_ngo_name
+- utter_amount
+- utter_name
+- utter_email
+- utter_payment
+- utter_hope
+- utter_ngo_list
+- utter_ngo_select
+- utter_wait
+
+templates:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, created by SAHYOG."
+
+  utter_animal_type:
+  - text: "Got it! Please mention the type of animal to be rescued!"
+
+  utter_pincode:
+  - text: "Awesome! We will find the nearest services which rescues animals. What is your pin code?"
+
+  utter_list:
+  - text: "Here is the list of NGOs/GOs which rescues animals..."
+
+  utter_sorry:
+  - text: "We are sorry! We couldn't find anything helpful matching your response!"
+
+  utter_ngo:
+  - text: "Thats great! Is any particular NGO/GO on your mind?"
+
+  utter_ngo_name:
+  - text: "Please tell us the name!"
+
+  utter_amount:
+  - text: "Thats cool! How much amount would you like to donate (in rupees)?"
+
+  utter_name:
+  - text: "What's your kind name?"
+
+  utter_email:
+  - text: "What's your email id?"
+
+  utter_payment:
+  - text: "Thats great! You will shortly receive an email which contains payment details. Just follow it and it will be done!"
+
+  utter_hope:
+  - text: "I hope you are having a great day!"
+
+  utter_ngo_list:
+  - text: "Cool! Here is the list of NGOs which will be grateful to receive your help..."
+
+  utter_ngo_select:
+  - text: "Did you choose one?"
+  
+  utter_wait:
+  - text: "No worries! Take your time. I will be waiting for your response. When you are done just provide me the name ;)"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
