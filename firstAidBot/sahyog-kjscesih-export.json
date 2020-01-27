@@ -1,0 +1,54 @@
+{
+  "first-aid" : {
+    "Poisoning and exposure to toxins" : {
+      "url1" : "https://www.youtube.com/watch?v=keweK0gyd20",
+      "url2" : "https://www.youtube.com/watch?v=Wsgd9KB2Qdo",
+      "url3" : "https://www.youtube.com/watch?v=HrClQyG9QTc",
+      "url4" : "https://www.youtube.com/watch?v=ZAoA7gK6EbM",
+      "url5" : "https://www.youtube.com/watch?v=bMs4MNF38p8"
+    },
+    "bleeding | injured pets" : {
+      "url1" : "https://www.youtube.com/watch?v=YgvsTAPkwEc",
+      "url2" : "https://www.youtube.com/watch?v=j3wgX4rpi_M",
+      "url3" : "https://www.youtube.com/watch?v=9Vzj8ZW6BM4",
+      "url4" : "https://www.youtube.com/watch?v=uaS5-TpVxaA"
+    },
+    "burns" : {
+      "url1" : "https://www.youtube.com/watch?v=QXUNF5TdzEk",
+      "url2" : "https://www.youtube.com/watch?v=eAV06xKE8Es"
+    },
+    "choking" : {
+      "url1" : "https://www.youtube.com/watch?v=v_wsV8ADwvs",
+      "url2" : "https://www.youtube.com/watch?v=p4JW-o0hqTg"
+    },
+    "cpr | breathing | heartbeat" : {
+      "url1" : "https://www.youtube.com/watch?v=KqClwoUrgZA",
+      "url2" : "https://www.youtube.com/watch?v=HB68yVIdPrw",
+      "url3" : "https://www.youtube.com/watch?v=ibd4edu1Zhs"
+    },
+    "first aid for dogs and puppies" : {
+      "channelSuggestion" : "https://www.youtube.com/channel/UCZBHxcANZ_W0MLi1CfdwMxw/videos",
+      "url1" : "https://www.youtube.com/watch?v=KWbDMjrD0Gg",
+      "url2" : "https://www.youtube.com/watch?v=qlqDumLS7dQ",
+      "url3" : "https://www.youtube.com/watch?v=167bynU5T6c",
+      "url4" : "https://www.youtube.com/watch?v=VD0n33dujCU"
+    },
+    "fractures or broken bones" : {
+      "url1" : "https://www.youtube.com/watch?v=a059c-_7XrE",
+      "url2" : "https://www.youtube.com/watch?v=NVAOFaNWbXY",
+      "url3" : "https://www.youtube.com/watch?v=5qn_ZaWYzLc",
+      "url4" : "https://www.youtube.com/watch?v=v7bprypCkLo",
+      "url5" : "https://www.youtube.com/watch?v=PFmpN2zIllM"
+    },
+    "heatstroke | faint" : {
+      "url1" : "https://www.youtube.com/watch?v=0o8BEkIvgqA",
+      "url2" : "https://www.youtube.com/watch?v=NmC4d_53WJg",
+      "url3" : "https://www.youtube.com/watch?v=Et80ZrwOYMM"
+    },
+    "prepare a first aid kit" : {
+      "url1" : "https://www.youtube.com/watch?v=zA_13qIh06E",
+      "url2" : "https://www.youtube.com/watch?v=kEa8DdKwfvE",
+      "url3" : "https://www.youtube.com/watch?v=5vWjy6rRy6g"
+    }
+  }
+}

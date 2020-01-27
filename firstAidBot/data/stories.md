@@ -1,15 +1,27 @@
-## story 01
+## fallback
+- utter_default
+
+## greeting path 1
 * greet
-	- utter_greet
+- utter_greet
 
-## story 02
-* goodbye
-	- utter_goodbye
+## fine path 1
+* fine_normal
+- utter_help
 
-## story 03
-* inform
-	- utter_ask_problem
+## fine path 2
+* fine_ask
+- utter_reply
 
-##story 04
-* inform
-	- action_firstaid
+## information path
+* information
+- utter_ofc
+- action_get_information
+
+## thanks path 1
+* thanks
+- utter_anything_else
+
+## bye path 1
+* bye
+- utter_bye
