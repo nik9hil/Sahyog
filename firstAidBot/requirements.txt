@@ -1,0 +1,4 @@
+rasa==1.0.9
+git+https://github.com/apixu/apixu-python.git
+tensorflow-gpu
+keras==2.0.8

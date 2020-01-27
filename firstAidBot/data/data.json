@@ -1,0 +1,166 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "Hello",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "bye",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "What first aid should be followed for choking?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 38,
+            "end": 45,
+            "value": "choking",
+            "entity": "problem"
+          }
+        ]
+      },
+      {
+        "text": "What should I do if my animal is having skin burns?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 45,
+            "end": 50,
+            "value": "burns",
+            "entity": "problem"
+          }
+        ]
+      },
+      {
+        "text": "Show me help for bleeding.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "bleeding",
+            "entity": "problem"
+          }
+        ]
+      },
+      {
+        "text": "How to prepare a first aid kit for my pet?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 17,
+            "end": 30,
+            "value": "first aid kit",
+            "entity": "problem"
+          }
+        ]
+      },
+      {
+        "text": "How to treat fractures in an animal?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 22,
+            "value": "fractures",
+            "entity": "problem"
+          }
+        ]
+      },
+      {
+        "text": "My animal is fainting.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 13,
+            "end": 21,
+            "value": "fainting",
+            "entity": "problem"
+          }
+        ]
+      },
+      {
+        "text": "Treat heatstroke.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 6,
+            "end": 16,
+            "value": "heatstroke",
+            "entity": "problem"
+          }
+        ]
+      },
+      {
+        "text": "Take care of pets.",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 5,
+            "end": 9,
+            "value": "care",
+            "entity": "problem"
+          }
+        ]
+      },
+      {
+        "text": "My dog got exposed to poison or toxin. What should I do?",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 22,
+            "end": 28,
+            "value": "poison",
+            "entity": "problem"
+          },
+          {
+            "start": 32,
+            "end": 37,
+            "value": "toxin",
+            "entity": "problem"
+          }
+        ]
+      },
+      {
+        "text": "Hi! need a help.",
+        "intent": "greet",
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "value": "Hi",
+            "entity": ""
+          }
+        ]
+      },
+      {
+        "text": "Thanks for your help! See you soon.",
+        "intent": "goodbye",
+        "entities": [
+          {
+            "start": 22,
+            "end": 35,
+            "value": "See you soon.",
+            "entity": ""
+          }
+        ]
+      },
+      {
+        "text": "bye bye",
+        "intent": "goodbye",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "bye bye",
+            "entity": ""
+          }
+        ]
+      }
+    ]
+  }
+}

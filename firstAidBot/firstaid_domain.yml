@@ -1,0 +1,26 @@
+slots:
+  problem:
+    type: text
+
+intents:
+  - greet
+  - goodbye
+  - inform
+
+entities:
+  - problem
+
+templates:
+  utter_greet:
+    - "Hello! How can I help?"
+  utter_goodbye:
+    - "SAHYOG at your Seva, whenever you say! Talk to you later."
+    - "I hope your query is solved. Good bye!"
+  utter_ask_problem:
+    - "What is the problem?"
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_problem
+  - actions.ActionFirstAid
