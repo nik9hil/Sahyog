@@ -79,7 +79,7 @@ def donationsubmit(request):
 def donations(request):
 	#dummyURL = database.child('firstAid').shallow().get().val()
 	#print(dummyURL)
-	try:
+	# try:
 		idtoken = request.session['uid']
 		a = authenticate.get_account_info(idtoken)
 		a = a['users']
@@ -100,18 +100,18 @@ def donations(request):
 			donateto = []
 			message = []
 			for i in lis_time:
-				try:
+				
 					ename = database.child('users').child(a).child('donations').child(i).child('name').get().val()
 					eamount = database.child('users').child(a).child('donations').child(i).child('amount').get().val()
 					edonateto = database.child('users').child(a).child('donations').child(i).child('donateto').get().val()
 					emessage = database.child('users').child(a).child('donations').child(i).child('message').get().val()
 					name.append(ename)
-					date.append(eamount)
+					amount.append(eamount)
 					donateto.append(edonateto)
 					message.append(emessage)
-				except:
-					print("Couldn't fetch the shallow tree")
-			donors_list = zip(name,amount,donateto,message,lis_time)
+				# except:
+				# 	print("Couldn't fetch the shallow tree")
+			donors_list = zip(name,amount,donateto,message)
 			print(donors_list)
 		context = {
 			'donors_list' : donors_list,
@@ -119,9 +119,9 @@ def donations(request):
 			'email' : mailid
 		}
 		return render(request,'donations/donations.html',context)
-	except:
-		message = "Oops! User has been logged out. Please log in again."
-		context = {
-			'message' : message
-		}
-		return render(request,'authentication/login.html',context)
+	# except:
+	# 	message = "Oops! User has been logged out. Please log in again."
+	# 	context = {
+	# 		'message' : message
+	# 	}
+	# 	return render(request,'authentication/login.html',context)

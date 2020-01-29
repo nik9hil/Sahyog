@@ -4,7 +4,8 @@
 	<br><h3>MY DONATIONS</h3><hr>
 	{% if donors_list %}
 		{% for name,amount,donateto,message in donors_list %}
-			<li><b>NAME:</b>{{name}}</li><br>
+			<li><b>NAME:</b>{{name}}</li>
+			<b>TO:</b>{{donateto}}<br>
 			<b>AMOUNT DONATED:</b>{{amount}}<br><b>MESSAGE:</b>{{message}}<br>
 			<!-- <a type="button" href="{% url 'deleteevent' %}?z={{time}}">Delete</a><br><br> -->
 		{% endfor %}
