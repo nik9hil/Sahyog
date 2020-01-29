@@ -1,0 +1,26 @@
+{% extends 'home/base.html' %}
+{% block content %}
+<div class="container">
+	<br><h3>My Events</h3><hr>
+	{% if event_list %}
+		{% for eventName,date,startTime,endTime,address,description,time in event_list %}
+			<li><b>NAME:</b>{{eventName}}</li>
+			<b>ON:</b>{{date}}<br><b>STARTS AT:</b>{{startTime}}<br><b>ENDS AT:</b>{{endTime}}<br>
+			<b>ADDRESS:</b>{{address}}<br><b>DESCRIPTION:</b>{{description}}<br>
+			<a type="button" href="{% url 'deleteevent' %}?z={{time}}">Delete</a><br><br>
+		{% endfor %}
+	{% else %}
+		<h4>You have not hosted any events.</h4>
+	{% endif %}
+	<br><h3>Other Events</h3><hr>
+	{% if all_events_list %}
+		{% for eventName,date,startTime,endTime,address,description in all_events_list %}
+			<li><b>NAME:</b>{{eventName}}</li>
+			<b>ON:</b>{{date}}<br><b>STARTS AT:</b>{{startTime}}<br><b>ENDS AT:</b>{{endTime}}<br>
+			<b>ADDRESS:</b>{{address}}<br><b>DESCRIPTION:</b>{{description}}<br>
+		{% endfor %}
+	{% else %}
+		<h4>There are no events for now.</h4>
+	{% endif %}
+</div>
+{% endblock content %}

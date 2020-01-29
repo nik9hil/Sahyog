@@ -68,31 +68,49 @@ def postsignup(request):
 	regnumber = request.POST.get('regnumber')
 	organisation = request.POST.get('organisation')
 	service = request.POST.get('service')
+	donation = request.POST.get('donation')
+	atg_certi = request.POST.get('atg_certi')
+	donation_link = request.POST.get('donation_link')
+	adoption = request.POST.get('adoption')
+	adoption_capacity = request.POST.get('adoption_capacity')
+	total_adopted = request.POST.get('total_adopted')
+	rescue = request.POST.get('rescue')
+	total_rescued = request.POST.get('total_rescued')
+	treatment = request.POST.get('treatment')
 	email = request.POST.get('email')
 	password = request.POST.get('password')
 	try:
-		user = authenticate.create_user_with_email_and_password(email,password)
+		idtoken = request.session['uid']
+		print(idtoken)
+		a = authenticate.get_account_info(idtoken)
+		a = a['users']
+		a = a[0]
+		a = a['localId']
+		success = True
+		data = {
+			'name':name,
+			'email':email,
+			'regnumber' : regnumber,
+			'organisation' : organisation,
+			'service' : service,
+			'donation' : donation,
+			'atg_certi' : atg_certi,
+			'donation_link' : donation_link,
+			'adoption' : adoption,
+			'adoption_capacity' : adoption_capacity,
+			'total_adopted' : total_adopted,
+			'total_rescued' : total_rescued,
+			'treatment' : treatment
+		}
+		context = {
+			'message' : message,
+			'success' : success
+		}
+		database.child('users').child(a).child('events').set(data,idtoken)
+		return render(request,'authentication/signup.html',context)
 	except:
 		message = "Unable to create account. Try again."
 		context = {
 			'message' : message
 		}
 		return render(request,'authentication/signup.html',context)
-	uid = user['localId']
-	idtoken = user['idToken']
-	message = "Account created successfully."
-	success = True
-	data = {
-		'name':name,
-		'email':email,
-		'regnumber' : regnumber,
-		'organisation' : organisation,
-		'service' : service,
-		'status':'1'
-	}
-	context = {
-		'message' : message,
-		'success' : success
-	}
-	database.child('users').child(uid).child('details').set(data,idtoken)
-	return render(request,'authentication/login.html',context)

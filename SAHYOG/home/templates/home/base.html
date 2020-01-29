@@ -9,6 +9,7 @@
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	    <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
+	    <script src="http://code.jquery.com/jquery-latest.js"></script>
 		<title>SAHYOG</title>
 	</head>
 	<body>
@@ -27,6 +28,12 @@
 				      <li>
 				        <a class="nav-link" href="{% url 'events' %}">Events <span class="sr-only"></span></a>
 				      </li>
+				      <li>
+				        <a class="nav-link" href="{% url 'donations' %}">Donations <span class="sr-only"></span></a>
+				      </li>
+				      <li>
+				        <a class="nav-link" href="{% url 'adoptions' %}">Adoptions <span class="sr-only"></span></a>
+				      </li>
 			      {% endif %}
 			    </ul>
 			    <ul class="navbar-nav navbar-right">
@@ -35,8 +42,9 @@
 		                Activities
 		              </a>
 		              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-				        <a class="dropdown-item" href="{% url 'eventsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Event</a>
+				        <a class="dropdown-item" href="{% url 'eventsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Events</a>
 				        {% if email %}
+				        	<a class="dropdown-item" href="{% url 'eventsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adoptions</a>
 		                	<a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>&emsp;Log out</a>
 		              	{% endif %}
 		              </div>

@@ -14,28 +14,67 @@
               {% csrf_token %}
               <div class="form-group">
                 <label for="exampleInputEmail1">Name:</label>
-                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+                <input type="" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" name="name">
                 <label for="exampleInputEmail1">Registration Number:</label>
-                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="regnumber"><br>
+                <input type="" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" name="regnumber"><br>
                 <label style="">Select the Organisation Type:</label>
-                <select class="selectpicker" data-style="btn-info" name="organisation">
-                  <option>NGO</option>
-                  <option>Government Organisation</option>
-                  <option>Vets</option>
-                  <option>Ambulance</option>  
+                <select class="selectpicker" data-style="btn-info" name="organisation" id="organisation"  onchange="MyFunction(this.value)">
+                  <option value="NGO">NGO</option>
+                  <option value="Government Organisation">Government Organisation</option>
+                  <option value="Vets">Vets</option>
+                  <option value="Ambulance">Ambulance</option>  
                 </select><br>
                 <label for="exampleInputEmail1">Area of service:</label>
-                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="serviceHelp" name="service">
+                <input type="" class="form-control" id="exampleInputEmail4" aria-describedby="serviceHelp" name="service">
                 <small id="serviceHelp" class="form-text text-danger">Create a seperate account for each branch.</small>
+              </div>
+              <div class="extension donation">
+              <label for="donation">Do you accept Donations?</label>
+                <input type="radio" name="donation" id="yes">Yes<emsp></emsp>
+                <input type="radio" name="donation" id="no">No<br>
+              </div>
+                <div class="extension donation_ext">
+                  <label for="atg_certi">Do you have an ATG Certificate?</label>
+                  <input type="radio" name="atg_certi" id="yes1">Yes<emsp></emsp>
+                  <input type="radio" name="atg_certi" id="no1">No<br>
+                  <label for="donation_link">Enter the link for your donation campaign in the box below: </label><br>
+                  <input type="url" class="form-control" name="donation_link">
+                </div>
+                <div class="extension adoption">
+                  <label for="adoption">Do you provide pet adoption services?</label>
+                  <input type="radio" name="adoption" id="yes2">Yes<emsp></emsp>
+                  <input type="radio" name="adoption" id="no2">No<br>
+                </div>
+                <div class="extension adoption_ext">
+                  <label>Enter your adoption capacity</label>
+                  <input type="Number" class="form-control" name="adoption_capacity">
+                  <label>Enter total adopted animals till date</label>
+                  <input type="Number" class="form-control" name="total_adopted">
+                </div>
+                  <div class="extension rescue">
+                  <label for="rescue">Do you provide animal rescue services?</label>
+                  <input type="radio" name="rescue" id="yes3">Yes<emsp></emsp>
+                  <input type="radio" name="rescue" id="no3">No<br>
+                </div>
+                <div class="extension rescue_ext">
+                  <label>Enter total rescued animals till date</label>
+                  <input type="Number" class="form-control" name="total_rescued">
+                </div>
+                <div class="extension treatment">
+                  <label for="treatment">What type of facility do you intend to provide?</label><br>
+                  <input type="radio" name="treatment" id="spot">On the Spot treatment<br>
+                  <input type="radio" name="treatment" id="vets">Escorting animals to the vet<br>
+                  <input type="radio" name="treatment" id="own">Treating animal at your own Infirmary
+                </div>
+                <div class="form-group">
                 <label for="exampleInputEmail1">Email address:</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                 <small id="emailHelp" class="form-text text-danger">We'll never share your email with anyone else.</small>
-              </div>
-              <div class="form-group">
                 <label for="exampleInputPassword1">Password:</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp" name="password">
                 <small id="passwordHelp" class="form-text text-danger">Do not share your password with anyone.</small>
               </div>
+                <br>
               <button type="submit" class="btn btn-primary">Sign Up</button>
             </form><br>
             <a href="{% url 'login' %}">Already a member? Log in</a>
@@ -43,4 +82,59 @@
       </div>
     </div>
   </div>
+  <script>
+    $(document).ready(function () {
+      $(".extension").hide();
+      if($("#organisation").val()=="NGO")
+        {
+          $(".rescue").show();
+          $(".donation").show();
+          $(".adoption").show();
+        }
+        if($("#organisation").val()=="Government Organisation")
+        {
+          $(".rescue").show();
+        }
+        if($("#organisation").val()=="Ambulance")
+        {
+          $(".treatment").show();
+        }
+        $("#yes").click(function(){
+          $(".donation_ext").show();
+        });
+        $("#no").click(function(){
+          $(".donation_ext").hide();
+        });
+        $("#yes2").click(function(){
+          $(".adoption_ext").show();
+        });
+        $("#no2").click(function(){
+          $(".adoption_ext").hide();
+        });
+        $("#yes3").click(function(){
+          $(".rescue_ext").show();
+        });
+        $("#no3").click(function(){
+          $(".rescue_ext").hide();
+        });
+      });
+
+    function MyFunction(){
+        $(".extension").hide();
+        if($("#organisation").val()=="NGO")
+        {
+          $(".rescue").show();
+          $(".donation").show();
+          $(".adoption").show();
+        }
+        if($("#organisation").val()=="Government Organisation")
+        {
+          $(".rescue").show();
+        }
+        if($("#organisation").val()=="Ambulance")
+        {
+          $(".treatment").show();
+        }
+      };
+  </script>
 {% endblock content %}
