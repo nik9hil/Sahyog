@@ -4,9 +4,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-	#/ /
-	path(r'eventsform/',views.eventsform,name='eventsform'),
-	path(r'eventsubmit/',views.eventsubmit,name='eventsubmit'),
-	path(r'events/',views.events,name='events'),
-	path(r'deleteevent/',views.deleteevent,name='deleteevent'),
+	#/
+	path(r'donationsform/',views.donationsform,name='donationsform'),
+	path(r'donationsubmit/',views.donationsubmit,name='donationsubmit'),
+	path(r'donations/',views.donations,name='donations'),
 ]

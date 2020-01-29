@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
     'events.apps.EventsConfig',
     'feralissues.apps.FeralissuesConfig',
+    'donations.apps.DonationsConfig',
 ]
 
 MIDDLEWARE = [

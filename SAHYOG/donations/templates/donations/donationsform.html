@@ -1,0 +1,31 @@
+{% extends 'home/base.html' %}
+{% block content %}
+  <div class="container">
+    <div class="col-md-12" style="padding-top: 5%;padding-left: 5%">
+      <div class="card border shadow mx-sm-10 p-3">
+        <h4 style="color:blue">Donation Details:</h4><hr>
+        <div class="text-info text mt-2">
+            <form action="/donationsubmit/" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="exampleInputEmail1">Full Name:</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+                <label for="exampleInputEmail1">Amount:</label>
+                <input type="Number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="amount">
+                <label for="exampleInputEmail1">Donate To:</label>
+                <select class="selectpicker" data-style="btn-info" name="donateto" id="donateto">
+                {% for name in users %}
+                  <option value="{{name}}">{{name}}</option>
+                {% endfor %}
+              </select>
+              <br>
+                <label for="exampleInputEmail1">Message:</label>
+                <textarea class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="message">
+				</textarea> 
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

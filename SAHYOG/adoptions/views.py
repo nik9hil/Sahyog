@@ -19,59 +19,7 @@ firebase = pyrebase.initialize_app(config)
 authenticate = firebase.auth()
 database = firebase.database()
 
-# Create your views here.
-def eventsform(request):
-	try:
-		a = authenticate.get_account_info(request.session['uid'])
-		a = a['users'][0]['email']
-		context = {
-			'email' : a
-		}
-		return render(request,'events/eventsform.html',context)
-	except:
-		message = "Oops! User has been logged out. Please log in again."
-		context = {
-			'message' : message
-		}
-		return render(request,'authentication/login.html',context)
-
-def eventsubmit(request):
-	eventName = request.POST.get('eventName')
-	date = request.POST.get('date')
-	address = request.POST.get('placeName')
-	description = request.POST.get('description')
-	startTime = request.POST.get('startTime')
-	endTime = request.POST.get('endTime')
-	tz = pytz.timezone('Asia/Kolkata')
-	time_now = datetime.now(timezone.utc).astimezone(tz)
-	millis = int(time.mktime(time_now.timetuple()))
-	try:
-		idtoken = request.session['uid']
-		print(idtoken)
-		a = authenticate.get_account_info(idtoken)
-		a = a['users']
-		a = a[0]
-		a = a['localId']
-
-		data = {
-			"eventName" : eventName,
-			"date" : date,
-			"startTime" : startTime,
-			"endTime" : endTime,
-			"address" : address,
-			"description" : description,
-		}
-
-		database.child('users').child(a).child('events').child(millis).set(data,idtoken)
-		return redirect('events')
-	except KeyError:
-		message = "Oops! User logged out. Please log in again."
-		context = {
-			'message':message
-		}
-		return render(request,'authentication/login.html',context)
-
-def events(request):
+def adoptions(request):
 	dummyURL = database.child('firstAid').shallow().get().val()
 	print(dummyURL)
 	try:
@@ -158,20 +106,6 @@ def events(request):
 			'email' : mailid
 		}
 		return render(request,'events/events.html',context)
-	except:
-		message = "Oops! User has been logged out. Please log in again."
-		context = {
-			'message' : message
-		}
-		return render(request,'authentication/login.html',context)
-
-def deleteevent(request):
-	try:
-		time = request.GET.get('z')
-		a = authenticate.get_account_info(request.session['uid'])
-		a = a['users'][0]['localId']
-		database.child('users').child(a).child('events').child(time).remove(request.session['uid'])
-		return redirect('events')
 	except:
 		message = "Oops! User has been logged out. Please log in again."
 		context = {
