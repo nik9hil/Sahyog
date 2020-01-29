@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'donations.apps.DonationsConfig',
     'firstaid.apps.FirstaidConfig',
     'adoption.apps.AdoptionConfig',
-
+    'report.apps.ReportConfig',
 ]
 
 MIDDLEWARE = [

@@ -19,4 +19,6 @@ urlpatterns = [
     path('',include('firstaid.urls')),
     #Adoptions
     path('',include('adoption.urls')),
+    #Report
+    path('',include('report.urls')),
 ]
