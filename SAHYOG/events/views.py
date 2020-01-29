@@ -132,7 +132,7 @@ def events(request):
 			description = []
 			for i in users:
 				alluserevents = database.child('users').child(i).child('events').shallow().get().val()
-				if alluserevents!= None:
+				if alluserevents != None:
 					user_events.append(alluserevents)
 					for j in user_events[-1]:
 						ename = database.child('users').child(i).child('events').child(j).child('eventName').get().val()
