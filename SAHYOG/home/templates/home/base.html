@@ -1,61 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-	    <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
-		<title>SAHYOG</title>
-	</head>
-	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			  <a class="navbar-brand" href="{% url 'home' %}"><b>SAHYOG</b></a>
-			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			    <span class="navbar-toggler-icon"></span>
-			  </button>
-
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item">
-			        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only"></span></a>
-			      </li>
-			      
-				      <li>
-				        <a class="nav-link" href="{% url 'events' %}">Events <span class="sr-only"></span></a>
-					  </li>
-					  <li>
-				        <a class="nav-link" href="{% url 'complaint' %}">Complaints <span class="sr-only"></span></a>
-					  </li>
-				
-				<li>
-					<a class="nav-link" href="{% url 'report' %}">My Report <span class="sr-only"></span></a>
-				</li>
-			    </ul>
-			    <ul class="navbar-nav navbar-right">
-		            <li class="nav-item dropdown">
-		              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-asterisk"></i> 
-		                Activities
-		              </a>
-		              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="{% url 'eventsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Event</a>
-						<a class="dropdown-item" href="{% url 'complaint' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Complaint</a>
-				        {% if email %}
-		                	<a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>&emsp;Log out</a>
-		              	{% endif %}
-		              </div>
-		            </li>
-	            </ul>
-			  </div>
-			</nav>
-		{% block content %}
-		{% endblock content %}
-	</body>
-=======
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -144,7 +86,7 @@
 			</nav> -->
 
 		<!-- Navbar -->
-		<div class="cp-nav fixed-nav">
+		<div class="cp-nav fixed-nav" style="color: #212529!important;">
 			<div class="container">
 				<div class="row">
 					<div class="col">
@@ -159,27 +101,33 @@
 						  		<li><i class="icon icon-email-envelope"></i>sahyog@somaiya.com</li>
 						  	</ul>
 						    <ul class="navbar-nav ml-auto">
-						    	{% if email %}
-						      <li class="nav-item">
+						    	<li class="nav-item">
 						        <a class="nav-link active" href="{% url 'home' %}">Home</a>
 						      </li>
 						      <li class="nav-item">
 						        <a class="nav-link" href="{% url 'events' %}">Event</a>
 						      </li>
+						    	{% if email %}
 						      <li class="nav-item">
-						        <a class="nav-link" href="{% url 'events' %}">Adoption</a>
+						        <a class="nav-link" href="">Adoption</a>
 						      </li>
-						      <!-- <li class="nav-item dropdown">
-						        <a href="" data-toggle="dropdown" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Adoptions</a>
-						        <ul class="dropdown-menu">
-			                      <li class="menu-item"><a href="blog.html"></a></li>
-			                      <li class="menu-item"><a href="blog-single.html">Blog Single</a></li>
-			                    </ul>
-						      </li> -->
 						      <li class="nav-item nav-donation">
-						        <a class="nav-link" href="{% url 'events' %}">Donation</a>
+						        <a class="nav-link" href="">Donation</a>
 						      </li>
-				       			<li class="nav-item">
+						      <li class="nav-item">
+						        <a class="nav-link" href="">Report</a>
+						      </li>
+						      <li class="nav-item">
+						        <a class="nav-link" href="">Complaint</a>
+						      </li>
+						      <li class="nav-item dropdown">
+						        <a href="" data-toggle="dropdown" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Activities</a>
+						        <ul class="dropdown-menu">
+			                      <li class="menu-item"><a href="{% url 'eventsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Event</a></li>
+			                      <li class="menu-item"><a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>Complaint</a></li>
+			                    </ul>
+						      </li>
+						      <li class="nav-item">
 						        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
 						      </li>
 		              			{% endif %}
@@ -197,7 +145,7 @@
 		<!-- =========================
 		     FOOTER 
 		============================== -->
-		<footer class="footer">
+		<footer class="footer" style="z-index: 100;">
 			<div class="footer-head">
 				<div class="container">
 					<div class="row">
@@ -224,7 +172,7 @@
 							<h4 class="title-text">About Us</h4>
 							<p>As a non-profit organistion we do lots of social activistis, you can find those in the following links.</p>
 
-							<div class="row">
+							<!-- <div class="row">
 								<div class="col-sm-6">
 									<ul class="footer-link">
 										<li><a href="#">Mission and Vision</a></li>
@@ -239,7 +187,7 @@
 										<li><a href="#">Mission and Vision</a></li>
 									</ul>
 								</div>
-							</div>
+							</div> -->
 						</div>
 
 						<div class="row-item col-lg-4 col-md-6">
@@ -279,6 +227,25 @@
 			</div>
 			<!-- /.footer-foot -->
 		</footer>
+		<script src="{% static 'home/js/jquery-1.11.2.min.js' %}"></script>
+		<script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'home/js/popper.min.js' %}"></script>
+		<script src="{% static 'home/js/jquery.nav.js' %}"></script>
+		<script src="{% static 'home/js/jquery.scrollTo.min.js' %}"></script>
+		<script src="{% static 'home/js/jquery.localScroll.min.js' %}"></script>
+		<script src="{% static 'home/js/jquery.countdown.min.js' %}"></script>
+		<script src="{% static 'home/js/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'home/js/jquery.waypoints.min.js' %}"></script>
+		<script src="{% static 'home/js/jquery.counterup.min.js' %}"></script>
+		<script src="{% static 'home/js/nivo-lightbox.min.js' %}"></script>
+		<script src="{% static 'home/js/jquery.mixitup.min.js' %}"></script>
+		<script src="{% static 'home/js/jflickrfeed.min.js' %}"></script>
+		<script src="{% static 'home/js/matchMedia.js' %}"></script>
+		<script src="{% static 'home/js/jquery.ajaxchimp.min.js' %}"></script>
+		<script src="{% static 'home/js/jquery.fitvids.js' %}"></script>
+		<script src="{% static 'home/js/jquery.stellar.min.js' %}"></script>
+		<script src="{% static 'home/js/smoothscroll.js' %}"></script>
+		<script src="{% static 'home/js/wow.min.js' %}"></script>
+		<script src="{% static 'home/js/custom.js' %}"></script>
 	</body>
->>>>>>> 1b7ab9607d1bec7b3eb65d168e5549d0eaf39184
 </html>
