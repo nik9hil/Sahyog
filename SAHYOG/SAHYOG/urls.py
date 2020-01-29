@@ -13,11 +13,10 @@ urlpatterns = [
     path('',include('events.urls')),
     #Feralissues,
     path('',include('feralissues.urls')),
-# <<<<<<< HEAD
     #Donations
     path('',include('donations.urls')),
-# =======
     #FirstAid
     path('',include('firstaid.urls')),
-# >>>>>>> b64dab1f5e6b3be27b919181df70e0fa5a6f3c5d
+    #Adoptions
+    path('',include('adoption.urls')),
 ]

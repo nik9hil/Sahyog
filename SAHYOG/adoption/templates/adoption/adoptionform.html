@@ -1,15 +1,27 @@
 {% extends 'home/base.html' %}
 {% block content %}
-<div class="container">
-	<br><h3>My Complaints</h3><hr>
-	{% if complaint_list %}
-		{% for complaintName,animal,address,description,time in complaint_list %}
-			<li><b>NAME:</b>{{complaintName}}</li>
-			<b>Animal:</b>{{animal}}<br>
-			<b>ADDRESS:</b>{{address}}<br><b>DESCRIPTION:</b>{{description}}<br>
-		{% endfor %}
-	{% else %}
-		<h4>You have no complaints.</h4>
-	{% endif %}
-</div>
+  <div class="container">
+    <div class="col-md-12" style="padding-top: 5%;padding-left: 5%">
+      <div class="card border shadow mx-sm-10 p-3">
+        <h4 style="color:blue">Animal Detail:</h4><hr>
+        <div class="text-info text mt-2">
+            <form action="/adoptionsubmit/" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="exampleInputEmail1">ID:</label>
+                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="eventName">
+                <label for="exampleInputEmail1">Animal:</label>
+                <select class="selectpicker" data-style="btn-info" name="animal" id="animal"  onchange="MyFunction(this.value)">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="rabbit">Rabbit</option>  
+                  </select><br><label for="exampleInputEmail1">Description:</label>
+                 <textarea class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="description">
+                </textarea> 
+                </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock content %}

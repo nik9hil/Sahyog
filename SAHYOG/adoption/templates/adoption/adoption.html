@@ -1,15 +1,14 @@
 {% extends 'home/base.html' %}
 {% block content %}
 <div class="container">
-	<br><h3>My Complaints</h3><hr>
+	<br><h3>Adoption</h3><hr>
 	{% if adoption_list %}
-		{% for complaintName,animal,address,description,time in complaint_list %}
-			<li><b>NAME:</b>{{complaintName}}</li>
+		{% for animal,address,description,time in adoption_list %}
 			<b>Animal:</b>{{animal}}<br>
-			<b>ADDRESS:</b>{{address}}<br><b>DESCRIPTION:</b>{{description}}<br>
+			<b>Addr:</b>{{address}}<br><b>DESCRIPTION:</b>{{description}}<br>
 		{% endfor %}
 	{% else %}
-		<h4>You have no complaints.</h4>
+		<h4>You have no animals for adoption.</h4>
 	{% endif %}
 </div>
 {% endblock content %}

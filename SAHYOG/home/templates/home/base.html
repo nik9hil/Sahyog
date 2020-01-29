@@ -109,7 +109,7 @@
 						        <a class="nav-link" href="{% url 'events' %}">Event</a>
 						      </li>
 						      <li class="nav-item">
-						        <a class="nav-link" href="">Adoption</a>
+						        <a class="nav-link" href="{% url 'adoption' %}">Adoption</a>
 						      </li>
 						      <li class="nav-item nav-donation">
 						        <a class="nav-link" href="{% url 'donations' %}">Donation</a>
@@ -132,7 +132,8 @@
 			                      <li class="menu-item"><a href="{% url 'complaintform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Complaint</a></li>
 			                       {% endif %}
 			                      <li class="menu-item"><a href="{% url 'donationsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Donation</a></li>
-			                    </ul>
+								  <li class="menu-item"><a href="{% url 'adoptionform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Adoption</a></li>
+								</ul>
 						      </li>
 						      {% if email %}
 						      <li class="nav-item">
