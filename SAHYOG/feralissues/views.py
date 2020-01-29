@@ -92,8 +92,9 @@ def report(request):
                 if allusercomplaints != None:
                     #print(allusercomplaints)
                     user_complaints.append(allusercomplaints)
-                    print(user_complaints[-1])
+                    #print(user_complaints[-1])
                     for j in user_complaints[-1]:
+                        print(j)
                         ename = database.child('users').child(i).child('complaints').child(j).child('complaint').get().val()
                         dat = database.child('users').child(i).child('complaints').child(j).child('animal').get().val()
                         addr = database.child('users').child(i).child('complaints').child(j).child('address').get().val()

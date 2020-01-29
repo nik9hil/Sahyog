@@ -86,7 +86,7 @@
 			</nav> -->
 
 		<!-- Navbar -->
-		<div class="cp-nav fixed-nav" style="color: #212529!important;">
+		<div class="cp-nav" style="background-color:black!important;">
 			<div class="container">
 				<div class="row">
 					<div class="col">
@@ -100,7 +100,7 @@
 						  		<li class="mobile"><i class="icon icon-call-phone"></i>+880 1723 130 532</li>
 						  		<li><i class="icon icon-email-envelope"></i>sahyog@somaiya.com</li>
 						  	</ul>
-						    <ul class="navbar-nav ml-auto">
+						    <ul class="navbar-nav ml-auto";">
 						    	<li class="nav-item">
 						        <a class="nav-link active" href="{% url 'home' %}">Home</a>
 						      </li>
@@ -109,32 +109,22 @@
 						      </li>
 						    	{% if email %}
 						      <li class="nav-item">
-<<<<<<< HEAD
-						        <a class="nav-link" href="{% url 'events' %}">Adoption</a>
-							  </li>
-							  <li class="nav-item">
-						        <a class="nav-link" href="{% url 'complaint' %}">Complaint</a>
-							  </li>
-							  <li class="nav-item">
-						        <a class="nav-link" href="{% url 'report' %}">Report</a>
-=======
 						        <a class="nav-link" href="">Adoption</a>
 						      </li>
 						      <li class="nav-item nav-donation">
 						        <a class="nav-link" href="">Donation</a>
->>>>>>> 0be3328beda0a25fe9cf2287a23f4d99cc3b3ad0
 						      </li>
 						      <li class="nav-item">
-						        <a class="nav-link" href="">Report</a>
+						        <a class="nav-link" href="{% url 'report' %}">Report</a>
 						      </li>
 						      <li class="nav-item">
-						        <a class="nav-link" href="">Complaint</a>
+								<a class="nav-link" href="{% url 'complaint' %}">Complaint</a>
 						      </li>
 						      <li class="nav-item dropdown">
 						        <a href="" data-toggle="dropdown" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Activities</a>
 						        <ul class="dropdown-menu">
 			                      <li class="menu-item"><a href="{% url 'eventsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Event</a></li>
-			                      <li class="menu-item"><a href=""><i class="fa fa-plus-circle" aria-hidden="true"></i>Complaint</a></li>
+			                      <li class="menu-item"><a href="{% url 'complaintform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Complaint</a></li>
 			                    </ul>
 						      </li>
 						      <li class="nav-item">
