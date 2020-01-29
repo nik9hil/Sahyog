@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %}
+{% block content %}
+<div class="container">
+  <div class="col-md-12" style="padding-top: 3%;padding-left: 5%">
+    <div class="card border shadow mx-sm-10 p-3">
+      <h4 style="color:blue">Enter the problem:</h4><hr>
+      <div class="text-info text mt-2">
+          <form action="/firstaid/" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" name="firstaid">
+                <small id="serviceHelp" class="form-text text-danger">Enter your search query and press enter.</small>
+            </div>
+              <br>
+          </form><br>
+      </div>
+    </div>
+  </div>
+  {% if status %}
+    {% for video in videos %}
+      <li>
+        <ul>{{video}}</ul>
+      </li>
+    {% endfor %}
+  {% else %}
+  <h3> Sorry, no solution available at the moment</h3>
+  {% endif %}
+</div>
+<br>
+{% endblock content %}
