@@ -13,10 +13,20 @@
 * fine_ask
 - utter_reply
 
-## information path
-* information
+## firstaid path
+* firstaid
 - utter_ofc
-- action_get_information
+- action_get_firstaid
+
+## events path
+* events
+- utter_ofc
+- action_get_events
+
+## adoption path
+* adopt
+- utter_ofc
+- action_get_adoption
 
 ## thanks path 1
 * thanks

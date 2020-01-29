@@ -3,17 +3,17 @@ import requests
 import json
 
 
-class ActionGetNewst(Action):
+class ActionGetFirstAid(Action):
 
     def name(self):
-        return 'action_get_information'
+        return 'action_get_firstaid'
 
     def run(self, dispatcher, tracker, domain):
-        with open('sahyog-kjscesih-export.json') as f:
+        with open('firstaid.json') as f:
             data = json.load(f)
         lisdata = list(data['first-aid'].keys())
         lis = []
-        q = tracker.get_slot('category')
+        q = tracker.get_slot('firstcategory')
         status = 0
         print("category:",q)
         for i in range(len(lisdata)):
@@ -37,4 +37,29 @@ class ActionGetNewst(Action):
         if status == 0:
             response = "Sorry, my system couldn't help you out with " + str(q) + "\nCould you specify more precisely?"
             dispatcher.utter_message(response)
+        return []
+
+class ActionGetEvents(Action):
+
+    def name(self):
+        return 'action_get_events'
+
+    def run(self, dispatcher, tracker, domain):
+        q = tracker.get_slot('places').lower()
+        print(q)
+        message = 'Haan mai, mujhe sab aata hai, mai bhagwaan hoo'
+        dispatcher.utter_message(message)
+        return []
+
+class ActionGetAdopt(Action):
+
+    def name(self):
+        return 'action_get_adoption'
+
+    def run(self, dispatcher, tracker, domain):
+        adoption = tracker.get_slot('adoption').lower()
+        animal = tracker.get_slot('animal').lower()
+        print(adoption,"-",animal)
+        message = 'Haan mai, mujhe sab aata hai, mai bhagwaan hoo'
+        dispatcher.utter_message(message)
         return []

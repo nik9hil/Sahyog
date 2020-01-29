@@ -2,7 +2,9 @@
 ---
 actions:
 - action_restart
-- action_get_information
+- action_get_firstaid
+- action_get_events
+- action_get_adoption
 - utter_greet
 - utter_reply
 - utter_help
@@ -13,23 +15,41 @@ actions:
 config:
   store_entities_as_slots: true
 entities:
-- category
+- firstcategory
+- places
+- adoption
 forms: []
 intents:
-- thanks:
-    use_entities: true
-- information:
+- firstaid:
     use_entities: true
 - greet:
+    use_entities: true
+- fine_ask:
+    use_entities: true
+- thanks:
     use_entities: true
 - bye:
     use_entities: true
 - fine_normal:
     use_entities: true
-- fine_ask:
+- events:
+    use_entities: true
+- adopt:
     use_entities: true
 slots:
-  category:
+  adoption:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  animal:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  firstcategory:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  places:
     auto_fill: true
     initial_value: null
     type: rasa_core.slots.TextSlot
@@ -52,7 +72,7 @@ templates:
   - text: Great. Tell me How can I help you?
   - text: Great. Tell me what all news you would like to get.
   utter_ofc:
-  - text: I can help you out with {category}
+  - text: I shall help you out.
   utter_reply:
   - text: I'm doing great. Please let me know what I can do for you.
   - text: I'm doing great. Tell me How can I help you today?

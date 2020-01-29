@@ -1,21 +1,33 @@
 slots:
-  category:
+  firstcategory:
+    type: text
+  places:
+    type: text
+  adoption:
+    type: text
+  animal:
     type: text
 
 entities:
-- category
+- firstcategory
+- places
+- adoption
 
 intents:
 - greet
 - fine_ask
 - fine_normal
-- information
+- firstaid
+- events
+- adopt
 - thanks
 - bye
 
 actions:
 - action_restart
-- action_get_information
+- action_get_firstaid
+- action_get_events
+- action_get_adoption
 - utter_greet
 - utter_reply
 - utter_help
@@ -39,7 +51,7 @@ templates:
     - text: No worries. Is there anything else I can help you with?
     - text: No worries. Let me know if there is anything else I can help you with
   utter_ofc:
-    - text: I can help you out with {category}
+    - text: I shall help you out.
   utter_bye:
     - text: Bye and have a nice day
     - text: Bbye and have a nice day
