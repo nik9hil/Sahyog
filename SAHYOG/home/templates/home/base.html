@@ -23,11 +23,17 @@
 			      <li class="nav-item">
 			        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only"></span></a>
 			      </li>
-			      {% if email %}
+			      
 				      <li>
 				        <a class="nav-link" href="{% url 'events' %}">Events <span class="sr-only"></span></a>
-				      </li>
-			      {% endif %}
+					  </li>
+					  <li>
+				        <a class="nav-link" href="{% url 'complaint' %}">Complaints <span class="sr-only"></span></a>
+					  </li>
+				
+				<li>
+					<a class="nav-link" href="{% url 'report' %}">My Report <span class="sr-only"></span></a>
+				</li>
 			    </ul>
 			    <ul class="navbar-nav navbar-right">
 		            <li class="nav-item dropdown">
@@ -35,7 +41,8 @@
 		                Activities
 		              </a>
 		              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-				        <a class="dropdown-item" href="{% url 'eventsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Event</a>
+						<a class="dropdown-item" href="{% url 'eventsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Event</a>
+						<a class="dropdown-item" href="{% url 'complaint' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Complaint</a>
 				        {% if email %}
 		                	<a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>&emsp;Log out</a>
 		              	{% endif %}

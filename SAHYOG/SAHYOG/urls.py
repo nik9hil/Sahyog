@@ -11,4 +11,6 @@ urlpatterns = [
     path('',include('authentication.urls')),
     #Events
     path('',include('events.urls')),
+    #Feralissues,
+    path('',include('feralissues.urls')),
 ]

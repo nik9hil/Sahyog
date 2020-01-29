@@ -1,0 +1,26 @@
+{% extends 'home/base.html' %}
+{% block content %}
+  <div class="container">
+    <div class="col-md-12" style="padding-top: 5%;padding-left: 5%">
+      <div class="card border shadow mx-sm-10 p-3">
+        <h4 style="color:blue">Complaint Portal</h4><hr>
+        <div class="text-info text mt-2">
+            <form action="/complaintsubmit/" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="exampleInputEmail1">Complaint Name</label>
+                <input type="" class="form-control" id="exampleInputEmail1" name="complaint">
+                <label for="exampleInputEmail1">Animal</label>
+                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="animal">
+                <label for="exampleInputEmail1">Address</label>
+                <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="placeName">
+                <label for="exampleInputEmail1">Description</label>
+                <textarea class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="description">
+				</textarea> 
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

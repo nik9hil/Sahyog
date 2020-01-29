@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'authentication.apps.AuthenticationConfig',
     'events.apps.EventsConfig',
+    'feralissues.apps.FeralissuesConfig',
 ]
 
 MIDDLEWARE = [

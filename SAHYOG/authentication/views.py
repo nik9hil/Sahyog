@@ -27,9 +27,9 @@ def sahyog(request):
 	except:
 		try:
 			if request.session['uid']:
-				email = request.session['email']
+				type = request.session['organisation']
 				context = {
-					'email' : email
+					'type' : type
 				}
 				return render(request,'home/home.html',context)
 		except:

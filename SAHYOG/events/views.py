@@ -72,14 +72,13 @@ def eventsubmit(request):
 		return render(request,'authentication/login.html',context)
 
 def events(request):
-	dummyURL = database.child('firstAid').shallow().get().val()
-	print(dummyURL)
 	try:
 		idtoken = request.session['uid']
 		a = authenticate.get_account_info(idtoken)
 		a = a['users']
 		a = a[0]
 		mailid = a['email']
+		print(mailid)
 		a = a['localId']
 		timestamps = database.child('users').child(a).child('events').shallow().get().val()
 		lis_time = []
@@ -115,12 +114,13 @@ def events(request):
 			event_list = zip(eventName,date,startTime,endTime,address,description,lis_time)
 			print(event_list)
 		allusers = database.child('users').shallow().get().val()
-		print(allusers)
+		print("allusers:",allusers)
 		if allusers != None:
 			users = []
 			for i in allusers:
 				if i != a:
 					users.append(i)
+			print(users)
 			user_events = []
 			user_details = []
 			size = 0
@@ -132,9 +132,9 @@ def events(request):
 			description = []
 			for i in users:
 				alluserevents = database.child('users').child(i).child('events').shallow().get().val()
-				user_events.append(alluserevents)
-				for j in user_events[-1]:
-					try:
+				if alluserevents!= None:
+					user_events.append(alluserevents)
+					for j in user_events[-1]:
 						ename = database.child('users').child(i).child('events').child(j).child('eventName').get().val()
 						dat = database.child('users').child(i).child('events').child(j).child('date').get().val()
 						stime = database.child('users').child(i).child('events').child(j).child('startTime').get().val()
@@ -147,9 +147,8 @@ def events(request):
 						endTime.append(etime)
 						address.append(addr)
 						description.append(descr)
-					except:
-						print("Could not fetch the shallow tree")
-
+				else:
+					continue	
 			all_events_list = zip(eventName,date,startTime,endTime,address,description)
 		print(all_events_list)
 		context = {
