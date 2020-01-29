@@ -20,19 +20,19 @@ authenticate = firebase.auth()
 database = firebase.database()
 
 def firstaid(request):
-	status = False
+	status = True
 	firstaid = database.child('first-aid').shallow().get().val()
 	firstaidList = []
 	for i in firstaid:
 		firstaidList.append(i)
 	firstaid = request.POST.get('firstaid')
 	urllist = []
+	newlist = []
 	if firstaid in firstaidList:
 		searchquery = database.child('first-aid').child(firstaid).shallow().get().val()
 		for i in searchquery:
 			urllist.append(i)
 		print(urllist)
-		newlist = []
 		for i in urllist:
 			search = database.child('first-aid').child(firstaid).child(i).get().val()
 			newlist.append(search)
@@ -40,6 +40,7 @@ def firstaid(request):
 		status = True
 	else:
 		print('do nothing')
+		status = False
 	context = {
 		'videos' : newlist,
 		'status' : status
