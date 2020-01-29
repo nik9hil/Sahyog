@@ -21,16 +21,16 @@ database = firebase.database()
 
 # Create your views here.
 def adoption(request):
-	try:
+	# try:
 		idtoken = request.session['uid']
 		a = authenticate.get_account_info(idtoken)
 		a = a['users']
 		a = a[0]
 		mailid = a['email']
 		a = a['localId']
-		timestamps = database.child('users').child(a).child('complaints').shallow().get().val()
+		timestamps = database.child('users').child(a).child('adoption').shallow().get().val()
 		lis_time = []
-		
+		adoption_list=[]
 		if timestamps != None:
 			for i in timestamps:
 				lis_time.append(i)
@@ -38,7 +38,6 @@ def adoption(request):
 			animal = []
 			address = []
 			description = []
-			adoption_list=[]
 			for i in lis_time:
 				try:
 					dat = database.child('users').child(a).child('adoption').child(i).child('animal').get().val()
@@ -53,16 +52,16 @@ def adoption(request):
 				adoption_list = zip(animal,address,description,lis_time)
                 #print(complaint_list)
 		context = {
-            'complaint_list' : adoption_list,
+            'adoption_list' : adoption_list,
             'email' : mailid
 		}
 		return render(request,'adoption/adoption.html',context)
-	except:
-		message = "Oops! User logged out."
-		context = {
-            'message' : message
-		}
-		return render(request,'authentication/login.html',context)
+	# except:
+	# 	message = "Oops! User logged out."
+	# 	context = {
+ #            'message' : message
+	# 	}
+	# 	return render(request,'authentication/login.html',context)
 
 
 def adoptionform(request):
