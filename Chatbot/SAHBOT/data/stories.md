@@ -28,6 +28,11 @@
 - utter_ofc
 - action_get_adoption
 
+## feral_issues path
+* feral_issues
+- utter_ofc
+- action_get_issue
+
 ## thanks path 1
 * thanks
 - utter_anything_else

@@ -1,1573 +1,1711 @@
 {
   "rasa_nlu_data": {
+    "entity_synonyms": [],
     "regex_features": [],
+    "lookup_tables": [],
     "common_examples": [
       {
-        "text": "hey",
-        "intent": "greet"
+        "intent": "greet",
+        "text": "hey"
       },
       {
-        "text": "hello",
-        "intent": "greet"
+        "intent": "greet",
+        "text": "hello"
       },
       {
-        "text": "hi",
-        "intent": "greet"
+        "intent": "greet",
+        "text": "hi"
       },
       {
-        "text": "Hi",
-        "intent": "greet"
+        "intent": "greet",
+        "text": "Hi"
       },
       {
-        "text": "I am good, how are you doing?",
-        "intent": "fine_ask"
+        "intent": "fine_ask",
+        "text": "I am good, how are you doing?"
       },
       {
-        "text": "I'm fine, how are you?",
-        "intent": "fine_ask"
+        "intent": "fine_ask",
+        "text": "I'm fine, how are you?"
       },
       {
-        "text": "I'm good, how are you?",
-        "intent": "fine_ask"
+        "intent": "fine_ask",
+        "text": "I'm good, how are you?"
       },
       {
-        "text": "I am doing great",
-        "intent": "fine_normal"
+        "intent": "fine_normal",
+        "text": "I am doing great"
       },
       {
-        "text": "I'm doing great",
-        "intent": "fine_normal"
+        "intent": "fine_normal",
+        "text": "I'm doing great"
       },
       {
-        "text": "I'm fine",
-        "intent": "fine_normal"
+        "intent": "fine_normal",
+        "text": "I'm fine"
       },
       {
-        "text": "I'm good",
-        "intent": "fine_normal"
+        "intent": "fine_normal",
+        "text": "I'm good"
       },
       {
-        "text": "poisoning",
+        "intent": "firstaid",
         "entities": [
           {
-            "end": 9,
-            "start": 0,
             "value": "poisoning",
-            "entity": "firstcategory"
+            "entity": "firstcategory",
+            "end": 9,
+            "start": 0
           }
         ],
-        "intent": "firstaid"
+        "text": "poisoning"
       },
       {
-        "text": "How to deal with Poisoning?",
+        "intent": "firstaid",
         "entities": [
           {
-            "end": 26,
-            "start": 17,
             "value": "Poisoning",
-            "entity": "firstcategory"
+            "entity": "firstcategory",
+            "end": 26,
+            "start": 17
           }
         ],
-        "intent": "firstaid"
+        "text": "How to deal with Poisoning?"
       },
       {
-        "text": "What to do if my dog has been poisoned?",
+        "intent": "firstaid",
         "entities": [
           {
-            "end": 38,
-            "start": 30,
             "value": "poisoned",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "I feel my dog has eaten Poisoning substance. What to do?",
-        "entities": [
-          {
-            "end": 33,
-            "start": 24,
-            "value": "Poisoning",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "Poisoning",
-        "entities": [
-          {
-            "end": 9,
-            "start": 0,
-            "value": "Poisoning",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What are the solutions for poisoning?",
-        "entities": [
-          {
-            "end": 36,
-            "start": 27,
-            "value": "poisoning",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "First aid for poisoning.",
-        "entities": [
-          {
-            "end": 23,
-            "start": 14,
-            "value": "poisoning",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "The dog has eaten poisonous food. What to do?",
-        "entities": [
-          {
-            "end": 27,
-            "start": 18,
-            "value": "poisonous",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "choking",
-        "entities": [
-          {
-            "end": 7,
-            "start": 0,
-            "value": "choking",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What are the solutions for choking?",
-        "entities": [
-          {
-            "end": 34,
-            "start": 27,
-            "value": "choking",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "My animal is choking. What to do?",
-        "entities": [
-          {
-            "end": 20,
-            "start": 13,
-            "value": "choking",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "The cat is choking.",
-        "entities": [
-          {
-            "end": 18,
-            "start": 11,
-            "value": "choking",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "I feel my dog is choking.",
-        "entities": [
-          {
-            "end": 24,
-            "start": 17,
-            "value": "choking",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "First aid for choking.",
-        "entities": [
-          {
-            "end": 21,
-            "start": 14,
-            "value": "choking",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "bleeding",
-        "entities": [
-          {
-            "end": 8,
-            "start": 0,
-            "value": "bleeding",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "My animal is bleeding. What to do?",
-        "entities": [
-          {
-            "end": 21,
-            "start": 13,
-            "value": "bleeding",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What are the solutions for bleeding?",
-        "entities": [
-          {
-            "end": 35,
-            "start": 27,
-            "value": "bleeding",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "I feel my cat is bleeding.",
-        "entities": [
-          {
-            "end": 25,
-            "start": 17,
-            "value": "bleeding",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "First aid for bleeding.",
-        "entities": [
-          {
-            "end": 22,
-            "start": 14,
-            "value": "bleeding",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "The dog is bleeding.",
-        "entities": [
-          {
-            "end": 19,
-            "start": 11,
-            "value": "bleeding",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "heatsroke",
-        "entities": [
-          {
-            "end": 9,
-            "start": 0,
-            "value": "heatsroke",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "My animal is having a heatstroke",
-        "entities": [
-          {
-            "end": 32,
-            "start": 22,
-            "value": "heatstroke",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What are the solutions for heatstroke?",
-        "entities": [
-          {
-            "end": 37,
-            "start": 27,
-            "value": "heatstroke",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "I feel my cat is having a heatstroke.",
-        "entities": [
-          {
-            "end": 36,
-            "start": 26,
-            "value": "heatstroke",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "First aid for heatstroke.",
-        "entities": [
-          {
-            "end": 24,
-            "start": 14,
-            "value": "heatstroke",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "The dog is heatstroke.",
-        "entities": [
-          {
-            "end": 21,
-            "start": 11,
-            "value": "heatstroke",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What to do if the animal is having a heatstroke",
-        "entities": [
-          {
-            "end": 47,
-            "start": 37,
-            "value": "heatstroke",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "faint",
-        "entities": [
-          {
-            "end": 5,
-            "start": 0,
-            "value": "faint",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "My animal is having a faint",
-        "entities": [
-          {
-            "end": 27,
-            "start": 22,
-            "value": "faint",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What are the solutions for faint?",
-        "entities": [
-          {
-            "end": 32,
-            "start": 27,
-            "value": "faint",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "I feel my cat is having a faint.",
-        "entities": [
-          {
-            "end": 31,
-            "start": 26,
-            "value": "faint",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "First aid for faint.",
-        "entities": [
-          {
-            "end": 19,
-            "start": 14,
-            "value": "faint",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "The dog is faint.",
-        "entities": [
-          {
-            "end": 16,
-            "start": 11,
-            "value": "faint",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What to do if the animal is having a faint",
-        "entities": [
-          {
-            "end": 42,
-            "start": 37,
-            "value": "faint",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "cpr",
-        "entities": [
-          {
-            "end": 3,
-            "start": 0,
-            "value": "cpr",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "My animal is having a cpr",
-        "entities": [
-          {
-            "end": 25,
-            "start": 22,
-            "value": "cpr",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "How to give a cpr?",
-        "entities": [
-          {
-            "end": 17,
-            "start": 14,
-            "value": "cpr",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What are the solutions for cpr?",
-        "entities": [
-          {
-            "end": 30,
-            "start": 27,
-            "value": "cpr",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "I feel my cat is having a cpr.",
-        "entities": [
-          {
-            "end": 29,
-            "start": 26,
-            "value": "cpr",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "First aid for cpr.",
-        "entities": [
-          {
-            "end": 17,
-            "start": 14,
-            "value": "cpr",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "The dog is cpr.",
-        "entities": [
-          {
-            "end": 14,
-            "start": 11,
-            "value": "cpr",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What to do if the animal is having a cpr",
-        "entities": [
-          {
-            "end": 40,
-            "start": 37,
-            "value": "cpr",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "injured",
-        "entities": [
-          {
-            "end": 7,
-            "start": 0,
-            "value": "injured",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "My animal is injured",
-        "entities": [
-          {
-            "end": 20,
-            "start": 13,
-            "value": "injured",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What are the solutions for injured?",
-        "entities": [
-          {
-            "end": 34,
-            "start": 27,
-            "value": "injured",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "I feel my cat is a injured.",
-        "entities": [
-          {
-            "end": 26,
-            "start": 19,
-            "value": "injured",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "First aid for injured.",
-        "entities": [
-          {
-            "end": 21,
-            "start": 14,
-            "value": "injured",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "The dog is injured.",
-        "entities": [
-          {
-            "end": 18,
-            "start": 11,
-            "value": "injured",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What to do if the animal is injured",
-        "entities": [
-          {
-            "end": 35,
-            "start": 28,
-            "value": "injured",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "injury",
-        "entities": [
-          {
-            "end": 6,
-            "start": 0,
-            "value": "injury",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "My animal is injury",
-        "entities": [
-          {
-            "end": 19,
-            "start": 13,
-            "value": "injury",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What are the solutions for injury?",
-        "entities": [
-          {
-            "end": 33,
-            "start": 27,
-            "value": "injury",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "I feel my cat is a injury.",
-        "entities": [
-          {
-            "end": 25,
-            "start": 19,
-            "value": "injury",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "First aid for injury.",
-        "entities": [
-          {
-            "end": 20,
-            "start": 14,
-            "value": "injury",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "The dog is injury.",
-        "entities": [
-          {
-            "end": 17,
-            "start": 11,
-            "value": "injury",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What to do if the animal is injury",
-        "entities": [
-          {
-            "end": 34,
-            "start": 28,
-            "value": "injury",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "burns",
-        "entities": [
-          {
-            "end": 5,
-            "start": 0,
-            "value": "burns",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "My animal is having burns",
-        "entities": [
-          {
-            "end": 25,
-            "start": 20,
-            "value": "burns",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What are the solutions for burns?",
-        "entities": [
-          {
-            "end": 32,
-            "start": 27,
-            "value": "burns",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "I feel my dog is having skin burns. What to do?",
-        "entities": [
-          {
-            "end": 34,
-            "start": 29,
-            "value": "burns",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "The cat is burned.",
-        "entities": [
-          {
-            "end": 17,
-            "start": 11,
-            "value": "burned",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What to do if the dog is having burns?",
-        "entities": [
-          {
-            "end": 37,
-            "start": 32,
-            "value": "burns",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "breathing",
-        "entities": [
-          {
-            "end": 9,
-            "start": 0,
-            "value": "breathing",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "My animal is unable to breathing. What to do?",
-        "entities": [
-          {
-            "end": 32,
-            "start": 23,
-            "value": "breathing",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "First aid for breathing problems.",
-        "entities": [
-          {
-            "end": 23,
-            "start": 14,
-            "value": "breathing",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What are the solutions for uneasy breathing?",
-        "entities": [
-          {
-            "end": 43,
-            "start": 34,
-            "value": "breathing",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What to do if the animal is breathing heavily?",
-        "entities": [
-          {
-            "end": 37,
-            "start": 28,
-            "value": "breathing",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "heartbeat",
-        "entities": [
-          {
-            "end": 9,
-            "start": 0,
-            "value": "heartbeat",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "My animal is having abnormal heartbeat",
-        "entities": [
-          {
+            "entity": "firstcategory",
             "end": 38,
-            "start": 29,
-            "value": "heartbeat",
-            "entity": "firstcategory"
+            "start": 30
           }
         ],
-        "intent": "firstaid"
+        "text": "What to do if my dog has been poisoned?"
       },
       {
-        "text": "heartbeat is dropping. What to do?",
+        "intent": "firstaid",
         "entities": [
           {
-            "end": 9,
-            "start": 0,
-            "value": "heartbeat",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "heartbeat is dropping.",
-        "entities": [
-          {
-            "end": 9,
-            "start": 0,
-            "value": "heartbeat",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "First aid for heartbeat.",
-        "entities": [
-          {
-            "end": 23,
-            "start": 14,
-            "value": "heartbeat",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What are the solutions for heartbeat?",
-        "entities": [
-          {
-            "end": 36,
-            "start": 27,
-            "value": "heartbeat",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "fractures",
-        "entities": [
-          {
-            "end": 9,
-            "start": 0,
-            "value": "fractures",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "My animal is having fractures. What to do?",
-        "entities": [
-          {
-            "end": 29,
-            "start": 20,
-            "value": "fractures",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "First aid for fractures.",
-        "entities": [
-          {
-            "end": 23,
-            "start": 14,
-            "value": "fractures",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "I feel my cat is having fractures.",
-        "entities": [
-          {
+            "value": "Poisoning",
+            "entity": "firstcategory",
             "end": 33,
-            "start": 24,
-            "value": "fractures",
-            "entity": "firstcategory"
+            "start": 24
           }
         ],
-        "intent": "firstaid"
+        "text": "I feel my dog has eaten Poisoning substance. What to do?"
       },
       {
-        "text": "The dog is fractures.",
+        "intent": "firstaid",
         "entities": [
           {
-            "end": 20,
-            "start": 11,
-            "value": "fractures",
-            "entity": "firstcategory"
+            "value": "Poisoning",
+            "entity": "firstcategory",
+            "end": 9,
+            "start": 0
           }
         ],
-        "intent": "firstaid"
+        "text": "Poisoning"
       },
       {
-        "text": "What to do if the animal is fractures?",
+        "intent": "firstaid",
         "entities": [
           {
-            "end": 37,
-            "start": 28,
-            "value": "fractures",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "kit",
-        "entities": [
-          {
-            "end": 3,
-            "start": 0,
-            "value": "kit",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "First aid kit.",
-        "entities": [
-          {
-            "end": 13,
-            "start": 10,
-            "value": "kit",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "Suggestions for first aid kit.",
-        "entities": [
-          {
-            "end": 29,
-            "start": 26,
-            "value": "kit",
-            "entity": "firstcategory"
-          }
-        ],
-        "intent": "firstaid"
-      },
-      {
-        "text": "What is the must carry first aid kit?",
-        "entities": [
-          {
+            "value": "poisoning",
+            "entity": "firstcategory",
             "end": 36,
-            "start": 33,
-            "value": "kit",
-            "entity": "firstcategory"
+            "start": 27
           }
         ],
-        "intent": "firstaid"
+        "text": "What are the solutions for poisoning?"
       },
       {
-        "text": "Solutions for first aid kit.",
+        "intent": "firstaid",
         "entities": [
           {
+            "value": "poisoning",
+            "entity": "firstcategory",
+            "end": 23,
+            "start": 14
+          }
+        ],
+        "text": "First aid for poisoning."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "poisonous",
+            "entity": "firstcategory",
             "end": 27,
-            "start": 24,
-            "value": "kit",
-            "entity": "firstcategory"
+            "start": 18
           }
         ],
-        "intent": "firstaid"
+        "text": "The dog has eaten poisonous food. What to do?"
       },
       {
-        "text": "Tell me events in Ghatkopar.",
+        "intent": "firstaid",
         "entities": [
           {
-            "end": 27,
-            "start": 18,
-            "value": "Ghatkopar",
-            "entity": "places"
+            "value": "choking",
+            "entity": "firstcategory",
+            "end": 7,
+            "start": 0
           }
         ],
-        "intent": "events"
+        "text": "choking"
       },
       {
-        "text": "Which events are going on in Vidyavihar?",
+        "intent": "firstaid",
         "entities": [
           {
-            "end": 39,
-            "start": 29,
-            "value": "Vidyavihar",
-            "entity": "places"
-          }
-        ],
-        "intent": "events"
-      },
-      {
-        "text": "Events in Vikhroli.",
-        "entities": [
-          {
-            "end": 18,
-            "start": 10,
-            "value": "Vikhroli",
-            "entity": "places"
-          }
-        ],
-        "intent": "events"
-      },
-      {
-        "text": "Events near Chembur.",
-        "entities": [
-          {
-            "end": 19,
-            "start": 12,
-            "value": "Chembur",
-            "entity": "places"
-          }
-        ],
-        "intent": "events"
-      },
-      {
-        "text": "Show me events in Mulund.",
-        "entities": [
-          {
-            "end": 24,
-            "start": 18,
-            "value": "Mulund",
-            "entity": "places"
-          }
-        ],
-        "intent": "events"
-      },
-      {
-        "text": "What events are in Kurla?",
-        "entities": [
-          {
-            "end": 24,
-            "start": 19,
-            "value": "Kurla",
-            "entity": "places"
-          }
-        ],
-        "intent": "events"
-      },
-      {
-        "text": "Can you tell me any events in Bhandup?",
-        "entities": [
-          {
-            "end": 37,
-            "start": 30,
-            "value": "Bhandup",
-            "entity": "places"
-          }
-        ],
-        "intent": "events"
-      },
-      {
-        "text": "adoption",
-        "entities": [
-          {
-            "end": 8,
-            "start": 0,
-            "value": "adoption",
-            "entity": "adoption"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "Hi, I want to adopt a pet.",
-        "entities": [
-          {
-            "end": 19,
-            "start": 14,
-            "value": "adopt",
-            "entity": "adoption"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "Hi, how to adopt a pet?",
-        "entities": [
-          {
-            "end": 16,
-            "start": 11,
-            "value": "adopt",
-            "entity": "adoption"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "How to adopt a pet?",
-        "entities": [
-          {
-            "end": 12,
-            "start": 7,
-            "value": "adopt",
-            "entity": "adoption"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "I want to adopt a pet.",
-        "entities": [
-          {
-            "end": 15,
-            "start": 10,
-            "value": "adopt",
-            "entity": "adoption"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "Please help me in adoption process.",
-        "entities": [
-          {
-            "end": 26,
-            "start": 18,
-            "value": "adoption",
-            "entity": "adoption"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "How to adopt a dog?",
-        "entities": [
-          {
-            "end": 12,
-            "start": 7,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 18,
-            "start": 15,
-            "value": "dog",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "What is the procedure of adoption of cat?",
-        "entities": [
-          {
-            "end": 33,
-            "start": 25,
-            "value": "adoption",
-            "entity": "adoption"
-          },
-          {
-            "end": 40,
-            "start": 37,
-            "value": "cat",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "adopt a cat.",
-        "entities": [
-          {
-            "end": 5,
-            "start": 0,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 11,
-            "start": 8,
-            "value": "cat",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "I want to adopt a dog. What is the procedure?",
-        "entities": [
-          {
-            "end": 15,
-            "start": 10,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 21,
-            "start": 18,
-            "value": "dog",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "I want to adopt a dog.",
-        "entities": [
-          {
-            "end": 15,
-            "start": 10,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 21,
-            "start": 18,
-            "value": "dog",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "How to adopt a goat?",
-        "entities": [
-          {
-            "end": 12,
-            "start": 7,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 19,
-            "start": 15,
-            "value": "goat",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "Procedure to adopt a goat.",
-        "entities": [
-          {
-            "end": 18,
-            "start": 13,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 25,
-            "start": 21,
-            "value": "goat",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "I would like to adopt a cattle.",
-        "entities": [
-          {
-            "end": 21,
-            "start": 16,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 30,
-            "start": 24,
-            "value": "cattle",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "adopt a cattle.",
-        "entities": [
-          {
-            "end": 5,
-            "start": 0,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 14,
-            "start": 8,
-            "value": "cattle",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "Adopt a hen.",
-        "entities": [
-          {
-            "end": 5,
-            "start": 0,
-            "value": "Adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 11,
-            "start": 8,
-            "value": "hen",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "Adoption procedure for hen.",
-        "entities": [
-          {
-            "end": 8,
-            "start": 0,
-            "value": "Adoption",
-            "entity": "adoption"
-          },
-          {
-            "end": 26,
-            "start": 23,
-            "value": "hen",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "Can you show me how to adopt a rabbit?",
-        "entities": [
-          {
-            "end": 28,
-            "start": 23,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 37,
-            "start": 31,
-            "value": "rabbit",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "I would love to adopt a rabbit.",
-        "entities": [
-          {
-            "end": 21,
-            "start": 16,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 30,
-            "start": 24,
-            "value": "rabbit",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "Please help me adopt a horse.",
-        "entities": [
-          {
-            "end": 20,
-            "start": 15,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 28,
-            "start": 23,
-            "value": "horse",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "How to adopt a horse?",
-        "entities": [
-          {
-            "end": 12,
-            "start": 7,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 20,
-            "start": 15,
-            "value": "horse",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "Help me adopt a hen.",
-        "entities": [
-          {
-            "end": 13,
-            "start": 8,
-            "value": "adopt",
-            "entity": "adoption"
-          },
-          {
-            "end": 19,
-            "start": 16,
-            "value": "hen",
-            "entity": "animal"
-          }
-        ],
-        "intent": "adopt"
-      },
-      {
-        "text": "What is the procedure for adoption of a hen?",
-        "entities": [
-          {
+            "value": "choking",
+            "entity": "firstcategory",
             "end": 34,
-            "start": 26,
-            "value": "adoption",
-            "entity": "adoption"
-          },
-          {
-            "end": 43,
-            "start": 40,
-            "value": "hen",
-            "entity": "animal"
+            "start": 27
           }
         ],
-        "intent": "adopt"
+        "text": "What are the solutions for choking?"
       },
       {
-        "text": "What is the procedure to adopt a cow?",
+        "intent": "firstaid",
         "entities": [
           {
-            "end": 30,
-            "start": 25,
-            "value": "adopt",
-            "entity": "adoption"
-          },
+            "value": "choking",
+            "entity": "firstcategory",
+            "end": 20,
+            "start": 13
+          }
+        ],
+        "text": "My animal is choking. What to do?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
           {
+            "value": "choking",
+            "entity": "firstcategory",
+            "end": 18,
+            "start": 11
+          }
+        ],
+        "text": "The cat is choking."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "choking",
+            "entity": "firstcategory",
+            "end": 24,
+            "start": 17
+          }
+        ],
+        "text": "I feel my dog is choking."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "choking",
+            "entity": "firstcategory",
+            "end": 21,
+            "start": 14
+          }
+        ],
+        "text": "First aid for choking."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "bleeding",
+            "entity": "firstcategory",
+            "end": 8,
+            "start": 0
+          }
+        ],
+        "text": "bleeding"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "bleeding",
+            "entity": "firstcategory",
+            "end": 21,
+            "start": 13
+          }
+        ],
+        "text": "My animal is bleeding. What to do?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "bleeding",
+            "entity": "firstcategory",
+            "end": 35,
+            "start": 27
+          }
+        ],
+        "text": "What are the solutions for bleeding?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "bleeding",
+            "entity": "firstcategory",
+            "end": 25,
+            "start": 17
+          }
+        ],
+        "text": "I feel my cat is bleeding."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "bleeding",
+            "entity": "firstcategory",
+            "end": 22,
+            "start": 14
+          }
+        ],
+        "text": "First aid for bleeding."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "bleeding",
+            "entity": "firstcategory",
+            "end": 19,
+            "start": 11
+          }
+        ],
+        "text": "The dog is bleeding."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "heatsroke",
+            "entity": "firstcategory",
+            "end": 9,
+            "start": 0
+          }
+        ],
+        "text": "heatsroke"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "heatstroke",
+            "entity": "firstcategory",
+            "end": 32,
+            "start": 22
+          }
+        ],
+        "text": "My animal is having a heatstroke"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "heatstroke",
+            "entity": "firstcategory",
+            "end": 37,
+            "start": 27
+          }
+        ],
+        "text": "What are the solutions for heatstroke?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "heatstroke",
+            "entity": "firstcategory",
             "end": 36,
-            "start": 33,
-            "value": "cow",
-            "entity": "animal"
+            "start": 26
           }
         ],
-        "intent": "adopt"
+        "text": "I feel my cat is having a heatstroke."
       },
       {
-        "text": "I want a cow. Help me!",
+        "intent": "firstaid",
         "entities": [
           {
-            "end": 12,
-            "start": 9,
-            "value": "cow",
-            "entity": "animal"
+            "value": "heatstroke",
+            "entity": "firstcategory",
+            "end": 24,
+            "start": 14
           }
         ],
-        "intent": "adopt"
+        "text": "First aid for heatstroke."
       },
       {
-        "text": "Thanks",
-        "intent": "thanks"
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "heatstroke",
+            "entity": "firstcategory",
+            "end": 21,
+            "start": 11
+          }
+        ],
+        "text": "The dog is heatstroke."
       },
       {
-        "text": "Thank you so much",
-        "intent": "thanks"
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "heatstroke",
+            "entity": "firstcategory",
+            "end": 47,
+            "start": 37
+          }
+        ],
+        "text": "What to do if the animal is having a heatstroke"
       },
       {
-        "text": "No, I am good as of now. Bye",
-        "intent": "bye"
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "faint",
+            "entity": "firstcategory",
+            "end": 5,
+            "start": 0
+          }
+        ],
+        "text": "faint"
       },
       {
-        "text": "Bye",
-        "intent": "bye"
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "faint",
+            "entity": "firstcategory",
+            "end": 27,
+            "start": 22
+          }
+        ],
+        "text": "My animal is having a faint"
       },
       {
-        "text": "Bbye",
-        "intent": "bye"
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "faint",
+            "entity": "firstcategory",
+            "end": 32,
+            "start": 27
+          }
+        ],
+        "text": "What are the solutions for faint?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "faint",
+            "entity": "firstcategory",
+            "end": 31,
+            "start": 26
+          }
+        ],
+        "text": "I feel my cat is having a faint."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "faint",
+            "entity": "firstcategory",
+            "end": 19,
+            "start": 14
+          }
+        ],
+        "text": "First aid for faint."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "faint",
+            "entity": "firstcategory",
+            "end": 16,
+            "start": 11
+          }
+        ],
+        "text": "The dog is faint."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "faint",
+            "entity": "firstcategory",
+            "end": 42,
+            "start": 37
+          }
+        ],
+        "text": "What to do if the animal is having a faint"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "cpr",
+            "entity": "firstcategory",
+            "end": 3,
+            "start": 0
+          }
+        ],
+        "text": "cpr"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "cpr",
+            "entity": "firstcategory",
+            "end": 25,
+            "start": 22
+          }
+        ],
+        "text": "My animal is having a cpr"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "cpr",
+            "entity": "firstcategory",
+            "end": 17,
+            "start": 14
+          }
+        ],
+        "text": "How to give a cpr?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "cpr",
+            "entity": "firstcategory",
+            "end": 30,
+            "start": 27
+          }
+        ],
+        "text": "What are the solutions for cpr?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "cpr",
+            "entity": "firstcategory",
+            "end": 29,
+            "start": 26
+          }
+        ],
+        "text": "I feel my cat is having a cpr."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "cpr",
+            "entity": "firstcategory",
+            "end": 17,
+            "start": 14
+          }
+        ],
+        "text": "First aid for cpr."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "cpr",
+            "entity": "firstcategory",
+            "end": 14,
+            "start": 11
+          }
+        ],
+        "text": "The dog is cpr."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "cpr",
+            "entity": "firstcategory",
+            "end": 40,
+            "start": 37
+          }
+        ],
+        "text": "What to do if the animal is having a cpr"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injured",
+            "entity": "firstcategory",
+            "end": 7,
+            "start": 0
+          }
+        ],
+        "text": "injured"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injured",
+            "entity": "firstcategory",
+            "end": 20,
+            "start": 13
+          }
+        ],
+        "text": "My animal is injured"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injured",
+            "entity": "firstcategory",
+            "end": 34,
+            "start": 27
+          }
+        ],
+        "text": "What are the solutions for injured?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injured",
+            "entity": "firstcategory",
+            "end": 26,
+            "start": 19
+          }
+        ],
+        "text": "I feel my cat is a injured."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injured",
+            "entity": "firstcategory",
+            "end": 21,
+            "start": 14
+          }
+        ],
+        "text": "First aid for injured."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injured",
+            "entity": "firstcategory",
+            "end": 18,
+            "start": 11
+          }
+        ],
+        "text": "The dog is injured."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injured",
+            "entity": "firstcategory",
+            "end": 35,
+            "start": 28
+          }
+        ],
+        "text": "What to do if the animal is injured"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injury",
+            "entity": "firstcategory",
+            "end": 6,
+            "start": 0
+          }
+        ],
+        "text": "injury"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injury",
+            "entity": "firstcategory",
+            "end": 19,
+            "start": 13
+          }
+        ],
+        "text": "My animal is injury"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injury",
+            "entity": "firstcategory",
+            "end": 33,
+            "start": 27
+          }
+        ],
+        "text": "What are the solutions for injury?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injury",
+            "entity": "firstcategory",
+            "end": 25,
+            "start": 19
+          }
+        ],
+        "text": "I feel my cat is a injury."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injury",
+            "entity": "firstcategory",
+            "end": 20,
+            "start": 14
+          }
+        ],
+        "text": "First aid for injury."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injury",
+            "entity": "firstcategory",
+            "end": 17,
+            "start": 11
+          }
+        ],
+        "text": "The dog is injury."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "injury",
+            "entity": "firstcategory",
+            "end": 34,
+            "start": 28
+          }
+        ],
+        "text": "What to do if the animal is injury"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "burns",
+            "entity": "firstcategory",
+            "end": 5,
+            "start": 0
+          }
+        ],
+        "text": "burns"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "burns",
+            "entity": "firstcategory",
+            "end": 25,
+            "start": 20
+          }
+        ],
+        "text": "My animal is having burns"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "burns",
+            "entity": "firstcategory",
+            "end": 32,
+            "start": 27
+          }
+        ],
+        "text": "What are the solutions for burns?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "burns",
+            "entity": "firstcategory",
+            "end": 34,
+            "start": 29
+          }
+        ],
+        "text": "I feel my dog is having skin burns. What to do?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "burned",
+            "entity": "firstcategory",
+            "end": 17,
+            "start": 11
+          }
+        ],
+        "text": "The cat is burned."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "burns",
+            "entity": "firstcategory",
+            "end": 37,
+            "start": 32
+          }
+        ],
+        "text": "What to do if the dog is having burns?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "breathing",
+            "entity": "firstcategory",
+            "end": 9,
+            "start": 0
+          }
+        ],
+        "text": "breathing"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "breathing",
+            "entity": "firstcategory",
+            "end": 32,
+            "start": 23
+          }
+        ],
+        "text": "My animal is unable to breathing. What to do?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "breathing",
+            "entity": "firstcategory",
+            "end": 23,
+            "start": 14
+          }
+        ],
+        "text": "First aid for breathing problems."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "breathing",
+            "entity": "firstcategory",
+            "end": 43,
+            "start": 34
+          }
+        ],
+        "text": "What are the solutions for uneasy breathing?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "breathing",
+            "entity": "firstcategory",
+            "end": 37,
+            "start": 28
+          }
+        ],
+        "text": "What to do if the animal is breathing heavily?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "heartbeat",
+            "entity": "firstcategory",
+            "end": 9,
+            "start": 0
+          }
+        ],
+        "text": "heartbeat"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "heartbeat",
+            "entity": "firstcategory",
+            "end": 38,
+            "start": 29
+          }
+        ],
+        "text": "My animal is having abnormal heartbeat"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "heartbeat",
+            "entity": "firstcategory",
+            "end": 9,
+            "start": 0
+          }
+        ],
+        "text": "heartbeat is dropping. What to do?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "heartbeat",
+            "entity": "firstcategory",
+            "end": 9,
+            "start": 0
+          }
+        ],
+        "text": "heartbeat is dropping."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "heartbeat",
+            "entity": "firstcategory",
+            "end": 23,
+            "start": 14
+          }
+        ],
+        "text": "First aid for heartbeat."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "heartbeat",
+            "entity": "firstcategory",
+            "end": 36,
+            "start": 27
+          }
+        ],
+        "text": "What are the solutions for heartbeat?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "fractures",
+            "entity": "firstcategory",
+            "end": 9,
+            "start": 0
+          }
+        ],
+        "text": "fractures"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "fractures",
+            "entity": "firstcategory",
+            "end": 29,
+            "start": 20
+          }
+        ],
+        "text": "My animal is having fractures. What to do?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "fractures",
+            "entity": "firstcategory",
+            "end": 23,
+            "start": 14
+          }
+        ],
+        "text": "First aid for fractures."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "fractures",
+            "entity": "firstcategory",
+            "end": 33,
+            "start": 24
+          }
+        ],
+        "text": "I feel my cat is having fractures."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "fractures",
+            "entity": "firstcategory",
+            "end": 20,
+            "start": 11
+          }
+        ],
+        "text": "The dog is fractures."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "fractures",
+            "entity": "firstcategory",
+            "end": 37,
+            "start": 28
+          }
+        ],
+        "text": "What to do if the animal is fractures?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "kit",
+            "entity": "firstcategory",
+            "end": 3,
+            "start": 0
+          }
+        ],
+        "text": "kit"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "kit",
+            "entity": "firstcategory",
+            "end": 13,
+            "start": 10
+          }
+        ],
+        "text": "First aid kit."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "kit",
+            "entity": "firstcategory",
+            "end": 29,
+            "start": 26
+          }
+        ],
+        "text": "Suggestions for first aid kit."
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "kit",
+            "entity": "firstcategory",
+            "end": 36,
+            "start": 33
+          }
+        ],
+        "text": "What is the must carry first aid kit?"
+      },
+      {
+        "intent": "firstaid",
+        "entities": [
+          {
+            "value": "kit",
+            "entity": "firstcategory",
+            "end": 27,
+            "start": 24
+          }
+        ],
+        "text": "Solutions for first aid kit."
+      },
+      {
+        "intent": "events",
+        "entities": [
+          {
+            "value": "Ghatkopar",
+            "entity": "places",
+            "end": 27,
+            "start": 18
+          }
+        ],
+        "text": "Tell me events in Ghatkopar."
+      },
+      {
+        "intent": "events",
+        "entities": [
+          {
+            "value": "Vidyavihar",
+            "entity": "places",
+            "end": 39,
+            "start": 29
+          }
+        ],
+        "text": "Which events are going on in Vidyavihar?"
+      },
+      {
+        "intent": "events",
+        "entities": [
+          {
+            "value": "Vikhroli",
+            "entity": "places",
+            "end": 18,
+            "start": 10
+          }
+        ],
+        "text": "Events in Vikhroli."
+      },
+      {
+        "intent": "events",
+        "entities": [
+          {
+            "value": "Chembur",
+            "entity": "places",
+            "end": 19,
+            "start": 12
+          }
+        ],
+        "text": "Events near Chembur."
+      },
+      {
+        "intent": "events",
+        "entities": [
+          {
+            "value": "Mulund",
+            "entity": "places",
+            "end": 24,
+            "start": 18
+          }
+        ],
+        "text": "Show me events in Mulund."
+      },
+      {
+        "intent": "events",
+        "entities": [
+          {
+            "value": "Kurla",
+            "entity": "places",
+            "end": 24,
+            "start": 19
+          }
+        ],
+        "text": "What events are in Kurla?"
+      },
+      {
+        "intent": "events",
+        "entities": [
+          {
+            "value": "Bhandup",
+            "entity": "places",
+            "end": 37,
+            "start": 30
+          }
+        ],
+        "text": "Can you tell me any events in Bhandup?"
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adoption",
+            "entity": "adoption",
+            "end": 8,
+            "start": 0
+          }
+        ],
+        "text": "adoption"
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 19,
+            "start": 14
+          }
+        ],
+        "text": "Hi, I want to adopt a pet."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 16,
+            "start": 11
+          }
+        ],
+        "text": "Hi, how to adopt a pet?"
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 12,
+            "start": 7
+          }
+        ],
+        "text": "How to adopt a pet?"
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 15,
+            "start": 10
+          }
+        ],
+        "text": "I want to adopt a pet."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adoption",
+            "entity": "adoption",
+            "end": 26,
+            "start": 18
+          }
+        ],
+        "text": "Please help me in adoption process."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 12,
+            "start": 7
+          },
+          {
+            "value": "dog",
+            "entity": "animal",
+            "end": 18,
+            "start": 15
+          }
+        ],
+        "text": "How to adopt a dog?"
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adoption",
+            "entity": "adoption",
+            "end": 33,
+            "start": 25
+          },
+          {
+            "value": "cat",
+            "entity": "animal",
+            "end": 40,
+            "start": 37
+          }
+        ],
+        "text": "What is the procedure of adoption of cat?"
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 5,
+            "start": 0
+          },
+          {
+            "value": "cat",
+            "entity": "animal",
+            "end": 11,
+            "start": 8
+          }
+        ],
+        "text": "adopt a cat."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 15,
+            "start": 10
+          },
+          {
+            "value": "dog",
+            "entity": "animal",
+            "end": 21,
+            "start": 18
+          }
+        ],
+        "text": "I want to adopt a dog. What is the procedure?"
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 15,
+            "start": 10
+          },
+          {
+            "value": "dog",
+            "entity": "animal",
+            "end": 21,
+            "start": 18
+          }
+        ],
+        "text": "I want to adopt a dog."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 12,
+            "start": 7
+          },
+          {
+            "value": "goat",
+            "entity": "animal",
+            "end": 19,
+            "start": 15
+          }
+        ],
+        "text": "How to adopt a goat?"
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 18,
+            "start": 13
+          },
+          {
+            "value": "goat",
+            "entity": "animal",
+            "end": 25,
+            "start": 21
+          }
+        ],
+        "text": "Procedure to adopt a goat."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 21,
+            "start": 16
+          },
+          {
+            "value": "cattle",
+            "entity": "animal",
+            "end": 30,
+            "start": 24
+          }
+        ],
+        "text": "I would like to adopt a cattle."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 5,
+            "start": 0
+          },
+          {
+            "value": "cattle",
+            "entity": "animal",
+            "end": 14,
+            "start": 8
+          }
+        ],
+        "text": "adopt a cattle."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "Adopt",
+            "entity": "adoption",
+            "end": 5,
+            "start": 0
+          },
+          {
+            "value": "hen",
+            "entity": "animal",
+            "end": 11,
+            "start": 8
+          }
+        ],
+        "text": "Adopt a hen."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "Adoption",
+            "entity": "adoption",
+            "end": 8,
+            "start": 0
+          },
+          {
+            "value": "hen",
+            "entity": "animal",
+            "end": 26,
+            "start": 23
+          }
+        ],
+        "text": "Adoption procedure for hen."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 28,
+            "start": 23
+          },
+          {
+            "value": "rabbit",
+            "entity": "animal",
+            "end": 37,
+            "start": 31
+          }
+        ],
+        "text": "Can you show me how to adopt a rabbit?"
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 21,
+            "start": 16
+          },
+          {
+            "value": "rabbit",
+            "entity": "animal",
+            "end": 30,
+            "start": 24
+          }
+        ],
+        "text": "I would love to adopt a rabbit."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 20,
+            "start": 15
+          },
+          {
+            "value": "horse",
+            "entity": "animal",
+            "end": 28,
+            "start": 23
+          }
+        ],
+        "text": "Please help me adopt a horse."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 12,
+            "start": 7
+          },
+          {
+            "value": "horse",
+            "entity": "animal",
+            "end": 20,
+            "start": 15
+          }
+        ],
+        "text": "How to adopt a horse?"
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 13,
+            "start": 8
+          },
+          {
+            "value": "hen",
+            "entity": "animal",
+            "end": 19,
+            "start": 16
+          }
+        ],
+        "text": "Help me adopt a hen."
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adoption",
+            "entity": "adoption",
+            "end": 34,
+            "start": 26
+          },
+          {
+            "value": "hen",
+            "entity": "animal",
+            "end": 43,
+            "start": 40
+          }
+        ],
+        "text": "What is the procedure for adoption of a hen?"
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "adopt",
+            "entity": "adoption",
+            "end": 30,
+            "start": 25
+          },
+          {
+            "value": "cow",
+            "entity": "animal",
+            "end": 36,
+            "start": 33
+          }
+        ],
+        "text": "What is the procedure to adopt a cow?"
+      },
+      {
+        "intent": "adopt",
+        "entities": [
+          {
+            "value": "cow",
+            "entity": "animal",
+            "end": 12,
+            "start": 9
+          }
+        ],
+        "text": "I want a cow. Help me!"
+      },
+      {
+        "intent": "feral_issues",
+        "entities": [
+          {
+            "value": "dog",
+            "entity": "animal",
+            "end": 24,
+            "start": 21
+          },
+          {
+            "value": "issue",
+            "entity": "issue",
+            "end": 30,
+            "start": 25
+          }
+        ],
+        "text": "Please help with the dog issue."
+      },
+      {
+        "intent": "feral_issues",
+        "entities": [
+          {
+            "value": "cat",
+            "entity": "animal",
+            "end": 16,
+            "start": 13
+          },
+          {
+            "value": "issues",
+            "entity": "issue",
+            "end": 51,
+            "start": 45
+          }
+        ],
+        "text": "I just saw a cat, giving out some irritating issues."
+      },
+      {
+        "intent": "feral_issues",
+        "entities": [
+          {
+            "value": "feral issue",
+            "entity": "issue",
+            "end": 23,
+            "start": 12
+          }
+        ],
+        "text": "Register my feral issue complaint."
+      },
+      {
+        "intent": "feral_issues",
+        "entities": [
+          {
+            "value": "complaint",
+            "entity": "issue",
+            "end": 21,
+            "start": 12
+          }
+        ],
+        "text": "Register my complaint."
+      },
+      {
+        "intent": "feral_issues",
+        "entities": [
+          {
+            "value": "issue",
+            "entity": "issue",
+            "end": 25,
+            "start": 20
+          }
+        ],
+        "text": "Please deal with my issue."
+      },
+      {
+        "intent": "feral_issues",
+        "entities": [
+          {
+            "value": "horse",
+            "entity": "animal",
+            "end": 35,
+            "start": 30
+          },
+          {
+            "value": "issue",
+            "entity": "issue",
+            "end": 41,
+            "start": 36
+          }
+        ],
+        "text": "Can you help me deal with the horse issue?"
+      },
+      {
+        "intent": "feral_issues",
+        "entities": [
+          {
+            "value": "issues",
+            "entity": "issue",
+            "end": 25,
+            "start": 19
+          }
+        ],
+        "text": "We are facing some issues. Help us!"
+      },
+      {
+        "intent": "feral_issues",
+        "entities": [
+          {
+            "value": "issues",
+            "entity": "issue",
+            "end": 25,
+            "start": 19
+          }
+        ],
+        "text": "We are facing some issues."
+      },
+      {
+        "intent": "feral_issues",
+        "entities": [
+          {
+            "value": "Issue",
+            "entity": "issue",
+            "end": 5,
+            "start": 0
+          }
+        ],
+        "text": "Issue"
+      },
+      {
+        "intent": "feral_issues",
+        "entities": [
+          {
+            "value": "issue",
+            "entity": "issue",
+            "end": 5,
+            "start": 0
+          }
+        ],
+        "text": "issue"
+      },
+      {
+        "intent": "thanks",
+        "text": "Thanks"
+      },
+      {
+        "intent": "thanks",
+        "text": "Thank you so much"
+      },
+      {
+        "intent": "bye",
+        "text": "No, I am good as of now. Bye"
+      },
+      {
+        "intent": "bye",
+        "text": "Bye"
+      },
+      {
+        "intent": "bye",
+        "text": "Bbye"
       }
-    ],
-    "lookup_tables": [],
-    "entity_synonyms": []
+    ]
   }
 }

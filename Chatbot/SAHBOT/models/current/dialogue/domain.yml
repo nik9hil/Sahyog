@@ -5,6 +5,7 @@ actions:
 - action_get_firstaid
 - action_get_events
 - action_get_adoption
+- action_get_issue
 - utter_greet
 - utter_reply
 - utter_help
@@ -18,23 +19,26 @@ entities:
 - firstcategory
 - places
 - adoption
+- issue
 forms: []
 intents:
-- firstaid:
+- events:
     use_entities: true
 - greet:
     use_entities: true
-- fine_ask:
-    use_entities: true
-- thanks:
-    use_entities: true
 - bye:
+    use_entities: true
+- fine_ask:
     use_entities: true
 - fine_normal:
     use_entities: true
-- events:
+- feral_issues:
     use_entities: true
 - adopt:
+    use_entities: true
+- firstaid:
+    use_entities: true
+- thanks:
     use_entities: true
 slots:
   adoption:
@@ -46,6 +50,10 @@ slots:
     initial_value: null
     type: rasa_core.slots.TextSlot
   firstcategory:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  issue:
     auto_fill: true
     initial_value: null
     type: rasa_core.slots.TextSlot

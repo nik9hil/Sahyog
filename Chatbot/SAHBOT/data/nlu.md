@@ -149,6 +149,18 @@
 - What is the procedure to [adopt](adoption) a [cow](animal)?
 - I want a [cow](animal). Help me!
 
+## intent: feral_issues
+- Please help with the [dog](animal) [issue](issue).
+- I just saw a [cat](animal), giving out some irritating [issues](issue).
+- Register my [feral issue](issue) complaint.
+- Register my [complaint](issue).
+- Please deal with my [issue](issue).
+- Can you help me deal with the [horse](animal) [issue](issue)?
+- We are facing some [issues](issue). Help us!
+- We are facing some [issues](issue).
+- [Issue](issue)
+- [issue](issue)
+
 ## intent:thanks
 - Thanks
 - Thank you so much

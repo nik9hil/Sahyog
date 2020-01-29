@@ -7,11 +7,14 @@ slots:
     type: text
   animal:
     type: text
+  issue:
+    type: text
 
 entities:
 - firstcategory
 - places
 - adoption
+- issue
 
 intents:
 - greet
@@ -20,6 +23,7 @@ intents:
 - firstaid
 - events
 - adopt
+- feral_issues
 - thanks
 - bye
 
@@ -28,6 +32,7 @@ actions:
 - action_get_firstaid
 - action_get_events
 - action_get_adoption
+- action_get_issue
 - utter_greet
 - utter_reply
 - utter_help

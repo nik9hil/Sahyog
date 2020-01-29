@@ -63,3 +63,16 @@ class ActionGetAdopt(Action):
         message = 'Haan mai, mujhe sab aata hai, mai bhagwaan hoo'
         dispatcher.utter_message(message)
         return []
+
+class ActionGetIssue(Action):
+
+    def name(self):
+        return 'action_get_issue'
+
+    def run(self, dispatcher, tracker, domain):
+        issue = tracker.get_slot('issue').lower()
+        animal = tracker.get_slot('animal').lower()
+        print(issue,"-",animal)
+        message = "Haan mai, mujhe sab aata hai, mai bhagwaan hoo"
+        dispatcher.utter_message(message)
+        return []
