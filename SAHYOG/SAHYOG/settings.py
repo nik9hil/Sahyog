@@ -41,11 +41,11 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
     'events.apps.EventsConfig',
     'feralissues.apps.FeralissuesConfig',
-<<<<<<< HEAD
+# <<<<<<< HEAD
     'donations.apps.DonationsConfig',
-=======
+# =======
     'firstaid.apps.FirstaidConfig',
->>>>>>> b64dab1f5e6b3be27b919181df70e0fa5a6f3c5d
+# >>>>>>> b64dab1f5e6b3be27b919181df70e0fa5a6f3c5d
 ]
 
 MIDDLEWARE = [
