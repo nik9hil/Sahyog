@@ -1,0 +1,36 @@
+<html>
+    <head>
+        
+    </head>
+    <body onload="getLocation()">
+        <p>getting loc...</p>
+    </body>
+    <script>
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+        
+        function showPosition(position) {
+          let lat= position.coords.latitude;
+          let long=position.coords.longitude;
+           console.log(lat,long)
+           var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:5000/loc", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            var payload = JSON.stringify({"latitude": lat, "logitude": long})
+            console.log(payload);
+            xhr.send(payload);
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var x=this.responseText
+                    console.log(x)
+                }
+          }
+        
+        }
+        </script>
+</html>
