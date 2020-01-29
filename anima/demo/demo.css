@@ -1,0 +1,166 @@
+.demo-banner {
+  background: url("../demo/images/banner.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.demo-banner-con {
+  text-align: center;
+  padding: 200px 0;
+  color: #fff;
+}
+
+.demo-banner-con h1 {
+  font-size: 4.8rem;
+  margin-bottom: 20px;
+}
+
+.demo-banner-con h5 {
+  font-size: 26px;
+  margin-bottom: 60px;
+}
+
+.demo-banner-con .buttons a.demo {
+  border: 2px solid #ff9d00;
+  background-color: #ff9d00;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 17px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 10px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.demo-banner-con .buttons a.purchase {
+  border: 2px solid #ff9d00;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 17px 30px;
+  font-size: 18px;
+  margin: 0 10px;
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.demo-pages {
+  padding: 100px 0 50px;
+}
+
+.demo-header {
+  text-align: center;
+}
+
+.demo-header h2 {
+  font-size: 3.6;
+  margin-bottom: 60px;
+  color: #1e414e;
+}
+
+.demo-page {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.demo-page .thumb {
+  position: relative;
+}
+
+.demo-page .thumb .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  opacity: 0;
+}
+
+.demo-page .thumb .overlay a {
+  margin-top: 50px;
+  font-size: 32px;
+  color: #fff;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.demo-page > a {
+  padding: 10px 0;
+  display: inline-block;
+  color: #1e414e;
+  font-family: Oswald, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+.demo-page:hover .thumb .overlay {
+  opacity: 1;
+}
+
+.demo-page:hover .thumb .overlay a {
+  margin-top: 0;
+}
+
+.demo-features {
+  background: #f6e25d;
+  padding: 100px 0 70px;
+}
+
+.demo-feature {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  margin-bottom: 30px;
+  border-radius: 5px;
+  padding: 30px 5px;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.demo-feature:hover {
+  background: rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.05);
+}
+
+.demo-feature .icon {
+  margin-bottom: 20px;
+}
+
+.purchase-block {
+  padding: 100px 0;
+  text-align: center;
+  background: #1e414e;
+  color: #fff;
+}
+
+.purchase-block .demo-purchase h2 {
+  margin-bottom: 40px;
+}
+
+.purchase-block .demo-purchase .purchase-link {
+  background-color: #f6e25d;
+  border: 2px solid #f6e25d;
+  color: #1e414e;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-family: Oswald, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 16px;
+}
