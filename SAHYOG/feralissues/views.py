@@ -51,7 +51,7 @@ def complaint(request):
                     description.append(descr)
                 except:
                     print("Couldn't fetch the shallow tree")
-                print(complaintName)
+                #print(complaintName)
                 complaint_list = zip(complaintName,animal,address,description,lis_time)
                 #print(complaint_list)
         context = {
@@ -67,6 +67,7 @@ def complaint(request):
         return render(request,'authentication/login.html',context)
 
 def report(request):
+    #print("timepass")
     try:
         idtoken = request.session['uid']
         a = authenticate.get_account_info(idtoken)
@@ -74,45 +75,41 @@ def report(request):
         a = a[0]
         mailid = a['email']
         a = a['localId']
-        timestamps = database.child('users').child(a).child('complaints').shallow().get().val()
-        lis_time = []
-        complaint_list = []
         allusers = database.child('users').shallow().get().val()
-        print(allusers['details'])
-        '''if allusers != None:
-			users = []
-			for i in allusers:
-				if i != a and i[details][0][]:
-					users.append(i)
-			print(users)
-			user_events = []
-			user_details = []
-			size = 0
-			eventName = []
-			date = []
-			startTime = []
-			endTime = []
-			address = []
-			description = []
-			for i in users:
-				alluserevents = database.child('users').child(i).child('complaints').shallow().get().val()
-				if alluserevents!= None:
-					user_events.append(alluserevents)
-					for j in user_events[-1]:
-						ename = database.child('users').child(i).child('complaints').child(j).child('eventName').get().val()
-						dat = database.child('users').child(i).child('complaints').child(j).child('animal').get().val()
-						addr = database.child('users').child(i).child('complaints').child(j).child('address').get().val()
-						descr = database.child('users').child(i).child('complaints').child(j).child('description').get().val()
-						complaintName.append(ename)
-						animal.append(dat)
-						address.append(addr)
-						description.append(descr)
-				else:
-					continue	
-			complaint_list = zip(complaintName,animal,address,description)
+        #print(allusers)
+        if allusers != None:
+            users = []
+            for i in allusers:
+                if i != a:
+                    users.append(i)
+            user_complaints = []
+            complaintName = []
+            animal = []
+            address = []
+            description = []
+            for i in users:
+                allusercomplaints = database.child('users').child(i).child('complaints').shallow().get().val()
+                if allusercomplaints != None:
+                    #print(allusercomplaints)
+                    user_complaints.append(allusercomplaints)
+                    print(user_complaints[-1])
+                    for j in user_complaints[-1]:
+                        ename = database.child('users').child(i).child('complaints').child(j).child('complaint').get().val()
+                        dat = database.child('users').child(i).child('complaints').child(j).child('animal').get().val()
+                        addr = database.child('users').child(i).child('complaints').child(j).child('address').get().val()
+                        descr = database.child('users').child(i).child('complaints').child(j).child('description').get().val()
+                        complaintName.append(ename)
+                        animal.append(dat)
+                        address.append(addr)
+                        description.append(descr)
+                else:
+                    continue
+        
+            complaint_list = zip(complaintName,animal,address,description)
         context = {
-			'email' : mailid
-		}'''
+			'email' : mailid,
+            'complaint_list' : complaint_list
+		}
         return render(request,'feralissues/report.html',context)
 
     except:

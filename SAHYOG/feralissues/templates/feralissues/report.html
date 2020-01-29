@@ -124,5 +124,14 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUbRHtu3k_fg3jDGk_qAatE5jA4bC_ndE&callback=initMap">
 		</script>
 		<h4>Report:</h4>
+		{% if complaint_list %}
+		{% for complaintName,animal,address,description,time in complaint_list %}
+			<li><b>NAME:</b>{{complaintName}}</li>
+			<b>Animal:</b>{{animal}}<br>
+			<b>ADDRESS:</b>{{address}}<br><b>DESCRIPTION:</b>{{description}}<br>
+		{% endfor %}
+		{% else %}
+		<h4>You have no complaints.</h4>
+		{% endif %}
 </div>
 {% endblock content %}
