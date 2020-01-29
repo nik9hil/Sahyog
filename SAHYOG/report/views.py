@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 import pyrebase
 from django.contrib import auth
+from django.views.generic import View
+from django.shortcuts import render
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 config = {
   'apiKey': "AIzaSyALcsnA6kvammHw3qVT67I1bIQUAaMgWk4",
@@ -19,7 +23,8 @@ database = firebase.database()
 
 # Create your views here.
 
-def report(request):
+class HomePageView(View):
+    def get(self, request, *args, **kwargs):
         idtoken = request.session['uid']
         a = authenticate.get_account_info(idtoken)
         a = a['users']
@@ -58,8 +63,19 @@ def report(request):
         
             complaint_list = zip(complaintName,animal,address,description)
         context = {
-			'email' : mailid,
+            'email' : mailid,
             'complaint_list' : complaint_list
-		}
+        }
         return render(request,'report/reports.html',context)
+
+class ChartData(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def get(self, request, format=None):
+        data = {
+            "labels": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "data": [12, 19, 3, 5, 2, 3, 10],
+        }   
+        return Response(data)
     
