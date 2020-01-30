@@ -97,7 +97,7 @@ class Chart(APIView):
         labels=[]
         complaints = database.child('complaints').shallow().get().val()
         for i in complaints:
-            auser = database.child('complaints').child(i).child('location').get().val()
+            auser = database.child('complaints').child(i).child('address').get().val()
             if auser:
                 auser = auser.lower()
                 if auser in data.keys():
