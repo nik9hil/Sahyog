@@ -4,58 +4,70 @@
 
 <section class="recent-events" id="recent-events">
 <div class="container">
-	<br><h3>My Events</h3><hr>
-	<div class="row">
+	<br><h6><a href="{% url 'home' %}">Home </a> > My Events</h6><hr>
+<div class="row">
 	{% if event_list %}
-		{% for eventName,date,startTime,endTime,address,description,lis_time in event_list %}
-		
 			<!-- INDIVIDUAL EVENT -->
-			<div class="row-item col-lg-4 col-md-4">
-				<div class="pet-thumb">
-					<img src="{% static 'events/images/event_1.jpg' %}" alt="Event-1" class="img-fluid">
-					<div class="event-timing" id="event-1"></div>
-				</div>
-
-				<article>
-					<h4 class="title-text"><a href="#">{{eventName}}</a></h4>
-					<p>{{description}}</p>
-					<p>The event starts at {{startTime}} and ends at {{endTime}}</p>
-					<p class="title-text">
-						<span class="date">{{date}}</span>
-						<span class="place">{{address}}</span>
-					</p>
-				</article>
-				<a type="button" href="{% url 'deleteevent' %}?z={{lis_time}}">Delete</a>
-			</div>
-		{% endfor %}
+		    <main role="main" class="col-md-5 ml-sm-auto col-lg-10 px-10"><br>
+		    	{% for eventName,date,startTime,endTime,address,description,lis_time in event_list %}
+					<div class="row w-100">
+				        <div class="col-md-10">
+				            <div class="card border shadow mx-sm-1 p-3" style="background-image: url('')">
+				            	<p></p>
+				                <div class="card border shadow text-info p-2 my-card" >
+				                	<h4 class="text-center" aria-hidden="true"><b style="color:black">{{eventName}}</b></h4>
+				                </div>
+				                <div class="text-info text-center mt-3"><h5><a href=""style="color:black">{{description}}</a></h5></div>
+				                <br><p>The event starts at {{startTime}} and ends at {{endTime}}</p>
+								<span class="date">{{date}}</span>
+								<span class="place">{{address}}</span>
+								<div class="row">
+									{% if email %}
+									<div class="col-5">
+										<center><a href="{% url 'deleteevent' %}?z={{lis_time}}" target="_blank"><button type="submit" class="btn btn-danger">Delete <i class="fa fa-trash"></i></button></a></center>
+									</div>
+									{% endif %}
+								</div>
+				                <p></p>
+			            	</div>
+				        </div>
+				    </div>
+				    <hr>
+				{% endfor %}
+		    </main>
 	{% else %}
 		<h4>You have not hosted any events.</h4>
 	{% endif %}
 </div>
-	<h3>Other Events</h3><hr>
-	<div class="row">
+	<h6><a href="{% url 'home' %}">HOME </a>> Other Events</h6><hr>
+<div class="row">
 	{% if all_events_list %}
-		{% for eventName,date,startTime,endTime,address,description in all_events_list %}
-			<div class="row-item col-lg-4 col-md-4">
-				<div class="pet-thumb">
-					<img src="{% static 'events/images/animal-thumbs/event_1.jpg' %}" alt="Event-1" class="img-fluid">
-					<!----<div class="event-timing" id="event-1"></div>--->
-				</div>
-
-				<article>
-					<h4 class="title-text"><a href="#">{{eventName}}</a></h4>
-					<p>{{description}}</p>
-					<p>The event starts at {{startTime}} and ends at {{endTime}}</p>
-					<p class="title-text">
-						<span class="date">{{date}}</span>
-						<span class="place">{{address}}</span>
-					</p>
-				</article>
-			<a type="button" href="{% url 'deleteevent' %}?z={{time}}">Delete</a>
-			</div>
-		{% endfor %}
+			<!-- INDIVIDUAL EVENT -->
+		    <main role="main" class="col-md-5 ml-sm-auto col-lg-10 px-10"><br>
+		    	{% for eventName,date,startTime,endTime,address,description in all_events_list %}
+					<div class="row w-100">
+				        <div class="col-md-10">
+				            <div class="card border shadow mx-sm-1 p-3" style="background-image: url('')">
+				            	<p></p>
+				                <div class="card border shadow text-info p-2 my-card" >
+				                	<h4 class="text-center" aria-hidden="true"><b style="color:black">{{eventName}}</b></h4>
+				                </div>
+				                <div class="text-info text-center mt-3"><h5><a href=""style="color:black">{{description}}</a></h5></div>
+				                <br>
+				                {% if startTime and endTime %}
+					                <p>The event starts at {{startTime}} and ends at {{endTime}}</p>
+									<span class="date">{{date}}</span>
+									<span class="place">{{address}}</span>
+				                <p></p>
+								{% endif %}
+			            	</div>
+				        </div>
+				    </div>
+				    <hr>
+				{% endfor %}
+		    </main>
 	{% else %}
-		<h4>There are no events for now.</h4>
+		<h4>You have not hosted any events.</h4>
 	{% endif %}
 </div>
 </section>

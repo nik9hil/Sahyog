@@ -87,8 +87,7 @@
 							  <a href="" data-toggle="dropdown" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Report</a>
 							  <ul class="dropdown-menu">
 								<li class="menu-item"><a href="{% url 'reporttt' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Organisations</a></li>
-								<li class="menu-item"><a href="{% url 'reportt' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Complaint</a></li>
-								<li class="menu-item"><a href="{% url 'reporta' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Accidents</a></li>
+								<li class="menu-item"><a href="{% url 'reporta' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Rescues</a></li>
 							  </ul>
 							</li>
 						      <li class="nav-item">
@@ -102,6 +101,9 @@
 			                      <li class="menu-item"><a href="{% url 'donationsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Donation</a></li>
 								  <li class="menu-item"><a href="{% url 'adoptionform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Adoption</a></li>
 								</ul>
+						      </li>
+						      <li class="nav-item">
+								<a class="nav-link" href="{% url 'maps' %}">Maps</a>
 						      </li>
 						      <li class="nav-item">
 						        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>

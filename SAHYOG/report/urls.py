@@ -11,4 +11,5 @@ urlpatterns = [
     path('api/chart/data/', ChartData.as_view()),
 	path('api/charts/datas/', Chart.as_view()),
 	path('api/charta/dataa/', Data.as_view()),
+	path(r'maps/',views.maps,name='maps'),
 ]

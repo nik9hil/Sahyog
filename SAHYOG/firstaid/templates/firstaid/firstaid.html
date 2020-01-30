@@ -1,7 +1,9 @@
 {% extends 'home/base.html' %}
+{% load static %}
 {% block content %}
+<link href="{% static 'firstaid/album.css' %}" rel="stylesheet">
 <div class="container">
-  <div class="col-md-12" style="padding-top: 3%;padding-left: 5%">
+  <div class="col-md-10">
     <div class="card border shadow mx-sm-10 p-3">
       <h4 style="color:blue">Enter the problem:</h4><hr>
       <div class="text-info text mt-2">
@@ -18,9 +20,20 @@
   </div>
   {% if status %}
     {% for video in videos %}
-      <li>
-        <ul>{{video}}</ul>
-      </li>
+      <div class="col-md-10">
+        <div class="card mb-4 shadow-sm">
+          <img class="bd-placeholder-img card-img-top" width="500" height="500" src="{{ video.thumbnail }}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"></img>
+          <div class="card-body">
+            <p class="big">{{ video.title }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a type="button" href="{{ video.url }}" class="btn btn-sm btn-outline-secondary">View</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
     {% endfor %}
   {% else %}
   <h3> Sorry, no solution available at the moment</h3>

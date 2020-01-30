@@ -1,0 +1,143 @@
+<head>
+<meta charset="utf-8" />
+<title>SAHYOG</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 50%; height: 50%; }
+</style>
+</head>
+{% block content %}
+<div class="container">
+<div id="map" style="width:100%;height:100%"></div>
+</div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1Ijoibml5YXRpdm0xMSIsImEiOiJjazV6OWpxaXowY2hoM25ueG15MTZobTZ3In0.Uzr_fCglW_4PO4OOzMPaRA';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/outdoors-v11',
+center: [72.907166,19.078505],
+zoom: 6
+});
+ 
+map.on('load', function() {
+// Add a new source from our GeoJSON data and set the
+// 'cluster' option to true. GL-JS will add the point_count property to your source data.
+map.addSource('earthquakes', {
+type: 'geojson',
+// Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
+// from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
+data:
+'../../earth.json',
+cluster: true,
+clusterMaxZoom: 14, // Max zoom to cluster points on
+clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+});
+ 
+map.addLayer({
+id: 'clusters',
+type: 'circle',
+source: 'earthquakes',
+filter: ['has', 'point_count'],
+paint: {
+'circle-color': [
+'step',
+['get', 'point_count'],
+'#51bbd6',
+100,
+'#f1f075',
+750,
+'#f28cb1'
+],
+'circle-radius': [
+'step',
+['get', 'point_count'],
+20,
+100,
+30,
+750,
+40
+]
+}
+});
+ 
+map.addLayer({
+id: 'cluster-count',
+type: 'symbol',
+source: 'earthquakes',
+filter: ['has', 'point_count'],
+layout: {
+'text-field': '{point_count_abbreviated}',
+'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+'text-size': 12
+}
+});
+ 
+map.addLayer({
+id: 'unclustered-point',
+type: 'circle',
+source: 'earthquakes',
+filter: ['!', ['has', 'point_count']],
+paint: {
+'circle-color': '#11b4da',
+'circle-radius': 4,
+'circle-stroke-width': 1,
+'circle-stroke-color': '#fff'
+}
+});
+ 
+// inspect a cluster on click
+map.on('click', 'clusters', function(e) {
+var features = map.queryRenderedFeatures(e.point, {
+layers: ['clusters']
+});
+var clusterId = features[0].properties.cluster_id;
+map.getSource('earthquakes').getClusterExpansionZoom(
+clusterId,
+function(err, zoom) {
+if (err) return;
+ 
+map.easeTo({
+center: features[0].geometry.coordinates,
+zoom: zoom
+});
+}
+);
+});
+
+map.addControl(
+new mapboxgl.GeolocateControl({
+positionOptions: {
+enableHighAccuracy: true
+},
+trackUserLocation: true
+})
+);
+ 
+map.on('mouseenter', 'clusters', function() {
+map.getCanvas().style.cursor = 'pointer';
+});
+map.on('mouseleave', 'clusters', function() {
+map.getCanvas().style.cursor = '';
+});
+});
+
+var myLayer = L.mapbox.featureLayer().addTo(map);
+myLayer.on('layeradd', function(e) {
+    var marker = e.layer,
+        feature = marker.feature;
+
+    // Create custom popup content
+    var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.title + '">'+
+                        '</a>';
+
+    // http://leafletjs.com/reference.html#popup
+    marker.bindPopup(popupContent,{
+        closeButton: false,
+        minWidth: 320
+    });
+});
+</script>
+{% endblock content %}
