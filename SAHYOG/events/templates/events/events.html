@@ -1,26 +1,62 @@
 {% extends 'home/base.html' %}
+{% load static %}
 {% block content %}
+
+<section class="recent-events" id="recent-events">
 <div class="container">
 	<br><h3>My Events</h3><hr>
+	<div class="row">
 	{% if event_list %}
-		{% for eventName,date,startTime,endTime,address,description,time in event_list %}
-			<li><b>NAME:</b>{{eventName}}</li>
-			<b>ON:</b>{{date}}<br><b>STARTS AT:</b>{{startTime}}<br><b>ENDS AT:</b>{{endTime}}<br>
-			<b>ADDRESS:</b>{{address}}<br><b>DESCRIPTION:</b>{{description}}<br>
-			<a type="button" href="{% url 'deleteevent' %}?z={{time}}">Delete</a><br><br>
+		{% for eventName,date,startTime,endTime,address,description,lis_time in event_list %}
+		
+			<!-- INDIVIDUAL EVENT -->
+			<div class="row-item col-lg-4 col-md-4">
+				<div class="pet-thumb">
+					<img src="{% static 'events/images/event_1.jpg' %}" alt="Event-1" class="img-fluid">
+					<div class="event-timing" id="event-1"></div>
+				</div>
+
+				<article>
+					<h4 class="title-text"><a href="#">{{eventName}}</a></h4>
+					<p>{{description}}</p>
+					<p>The event starts at {{startTime}} and ends at {{endTime}}</p>
+					<p class="title-text">
+						<span class="date">{{date}}</span>
+						<span class="place">{{address}}</span>
+					</p>
+				</article>
+				<a type="button" href="{% url 'deleteevent' %}?z={{lis_time}}">Delete</a>
+			</div>
 		{% endfor %}
 	{% else %}
 		<h4>You have not hosted any events.</h4>
 	{% endif %}
-	<br><h3>Other Events</h3><hr>
+</div>
+	<h3>Other Events</h3><hr>
+	<div class="row">
 	{% if all_events_list %}
 		{% for eventName,date,startTime,endTime,address,description in all_events_list %}
-			<li><b>NAME:</b>{{eventName}}</li>
-			<b>ON:</b>{{date}}<br><b>STARTS AT:</b>{{startTime}}<br><b>ENDS AT:</b>{{endTime}}<br>
-			<b>ADDRESS:</b>{{address}}<br><b>DESCRIPTION:</b>{{description}}<br>
+			<div class="row-item col-lg-4 col-md-4">
+				<div class="pet-thumb">
+					<img src="{% static 'events/images/animal-thumbs/event_1.jpg' %}" alt="Event-1" class="img-fluid">
+					<!----<div class="event-timing" id="event-1"></div>--->
+				</div>
+
+				<article>
+					<h4 class="title-text"><a href="#">{{eventName}}</a></h4>
+					<p>{{description}}</p>
+					<p>The event starts at {{startTime}} and ends at {{endTime}}</p>
+					<p class="title-text">
+						<span class="date">{{date}}</span>
+						<span class="place">{{address}}</span>
+					</p>
+				</article>
+			<a type="button" href="{% url 'deleteevent' %}?z={{time}}">Delete</a>
+			</div>
 		{% endfor %}
 	{% else %}
 		<h4>There are no events for now.</h4>
 	{% endif %}
 </div>
+</section>
 {% endblock content %}
