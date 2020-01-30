@@ -45,53 +45,13 @@
 		<title>SAHYOG</title>
 	</head>
 	<body>
-		<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			  <a class="navbar-brand" href="{% url 'home' %}"><b>SAHYOG</b></a>
-			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			    <span class="navbar-toggler-icon"></span>
-			  </button>
-
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item">
-			        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only"></span></a>
-			      </li>
-			      {% if email %}
-				      <li>
-				        <a class="nav-link" href="{% url 'events' %}">Events <span class="sr-only"></span></a>
-				      </li>
-				      <li>
-				        <a class="nav-link" href="{% url 'events' %}">Donations <span class="sr-only"></span></a>
-				      </li>
-				      <li>
-				        <a class="nav-link" href="{% url 'events' %}">Adoptions <span class="sr-only"></span></a>
-				      </li>
-			      {% endif %}
-			    </ul>
-			    <ul class="navbar-nav navbar-right">
-		            <li class="nav-item dropdown">
-		              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-asterisk"></i> 
-		                Activities
-		              </a>
-		              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-				        <a class="dropdown-item" href="{% url 'eventsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Events</a>
-				        {% if email %}
-				        	<a class="dropdown-item" href="{% url 'eventsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adoptions</a>
-		                	<a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>&emsp;Log out</a>
-		              	{% endif %}
-		              </div>
-		            </li>
-	            </ul>
-			  </div>
-			</nav> -->
-
 		<!-- Navbar -->
 		<div class="cp-nav" style="background-color:black!important;">
 			<div class="container">
 				<div class="row">
 					<div class="col">
 						<nav class="navbar navbar-expand-lg custom-nav" id="spyNav">
-						  <a class="navbar-brand" href="#">SAHYOG</a>
+						  <a class="navbar-brand" href="{% url 'home' %}">SAHYOG</a>
 						  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						    <span class="icon icon-align-justify"></span>
 						  </button>
@@ -101,10 +61,16 @@
 						  		<li><i class="icon icon-email-envelope"></i>sahyog@somaiya.com</li>
 						  	</ul>
 						    <ul class="navbar-nav ml-auto">
-						    	<li class="nav-item">
+						    {% if email %}
+						    <li class="nav-item">
 						        <a class="nav-link active" href="{% url 'home' %}">Home</a>
 						      </li>
-						    	{% if email %}
+						      {% else %}
+						      <li class="nav-item">
+						        <a class="nav-link active" href="{% url 'signup' %}">Register</a>
+						      </li>
+						      {% endif %}
+					    	{% if email %}
 						      <li class="nav-item">
 						        <a class="nav-link" href="{% url 'events' %}">Event</a>
 						      </li>
@@ -118,7 +84,6 @@
 						        <a class="nav-link" href="{% url 'firstaid' %}">FirstAid</a>
 						      </li>
 						      <li class="nav-item dropdown">
-								{% endif %}
 							  <a href="" data-toggle="dropdown" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Report</a>
 							  <ul class="dropdown-menu">
 								<li class="menu-item"><a href="{% url 'reporttt' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Organisations</a></li>
@@ -132,20 +97,17 @@
 						      <li class="nav-item dropdown">
 						        <a href="" data-toggle="dropdown" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Activities</a>
 						        <ul class="dropdown-menu">
-						        	{% if email %}
 			                      <li class="menu-item"><a href="{% url 'eventsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Event</a></li>
 			                      <li class="menu-item"><a href="{% url 'complaintform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Complaint</a></li>
-			                       {% endif %}
 			                      <li class="menu-item"><a href="{% url 'donationsform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Donation</a></li>
 								  <li class="menu-item"><a href="{% url 'adoptionform' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>Adoption</a></li>
 								</ul>
 						      </li>
-						      {% if email %}
 						      <li class="nav-item">
 						        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
 						      </li>
-		              			{% endif %}
 						    </ul>
+	              			{% endif %}
 						  </div>
 						</nav>
 					</div>
@@ -178,68 +140,6 @@
 					</div>
 				</div>
 			</div><!-- /.footer-head -->
-
-			<section class="footer-body">
-				<div class="container">
-					<div class="row">
-						<div class="row-item col-lg-4 col-md-6">
-							<h4 class="title-text">About Us</h4>
-							<p>As a non-profit organistion we do lots of social activistis, you can find those in the following links.</p>
-
-							<!-- <div class="row">
-								<div class="col-sm-6">
-									<ul class="footer-link">
-										<li><a href="#">Mission and Vision</a></li>
-										<li><a href="#">Mission and Vision</a></li>
-										<li><a href="#">Mission and Vision</a></li>
-									</ul>
-								</div>
-								<div class="col-sm-6">
-									<ul class="footer-link">
-										<li><a href="#">Mission and Vision</a></li>
-										<li><a href="#">Mission and Vision</a></li>
-										<li><a href="#">Mission and Vision</a></li>
-									</ul>
-								</div>
-							</div> -->
-						</div>
-
-						<div class="row-item col-lg-4 col-md-6">
-							<h4 class="title-text">Subscribe</h4>
-							<p>To stay touch we touch and our works please subscribe our newsletter by entering your email address.</p>
-
-							<form id="subscribe" role="form" class="subscribe">
-								<div class="input-group">
-									<label for="subscribe-email" class="sr-only">Your email address</label>
-									<input type="email" name="subscribe-email" id="subscribe-email" class="form-control" placeholder="Your email address">
-										<button class="btn submit-btn">subscribe</button>
-								</div>
-
-								<p class="success-msg">You are successfully subscribed!</p>
-								<p class="error-msg">Error! Something went wrong!</p>
-							</form>
-
-						</div>
-
-						<div class="row-item col-lg-4 col-md-6">
-							<h4 class="title-text">flickr photos</h4>
-
-							<ul class="flickr-feed"></ul>
-						</div>
-					</div>
-				</div>
-			</section><!-- /.footer-body -->
-
-			<div class="footer-foot">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<p>&copy; 2019 <a href="http://codepassenger.com/">Sahyog</a> - Smart Animal Healthaid - be Your Own Guide</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /.footer-foot -->
 		</footer>
 		<script src="{% static 'home/js/jquery-1.11.2.min.js' %}"></script>
 		<script src="{% static 'home/js/bootstrap.min.js' %}"></script>
