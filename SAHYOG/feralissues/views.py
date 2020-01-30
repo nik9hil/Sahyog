@@ -27,35 +27,21 @@ def complaint(request):
         a = a[0]
         mailid = a['email']
         a = a['localId']
-        timestamps = database.child('users').child(a).child('complaints').shallow().get().val()
-        lis_time = []
-        complaint_list = []
-        
-        if timestamps != None:
-            for i in timestamps:
-                lis_time.append(i)
-            lis_time.sort(reverse=True)
-            complaintName = []
-            animal = []
-            address = []
-            description = []
-            for i in lis_time:
-                try:
-                    ename = database.child('users').child(a).child('complaints').child(i).child('complaint').get().val()
-                    dat = database.child('users').child(a).child('complaints').child(i).child('animal').get().val()
-                    addr = database.child('users').child(a).child('complaints').child(i).child('address').get().val()
-                    descr = database.child('users').child(a).child('complaints').child(i).child('description').get().val()
-                    complaintName.append(ename)
-                    animal.append(dat)
-                    address.append(addr)
-                    description.append(descr)
-                except:
-                    print("Couldn't fetch the shallow tree")
-                #print(complaintName)
-                complaint_list = zip(complaintName,animal,address,description,lis_time)
-                #print(complaint_list)
+        data = database.child('complaints').shallow().get().val()
+        complain_list = []
+        for i in data:
+            complain_list.append(i)
+        print("COMPLAINT LIST:",complain_list)
+        addr = []
+        anim = []
+        descr = []
+        for i in complain_list:
+            addr.append(database.child('complaints').child(i).child('address').get().val())
+            anim.append(database.child('complaints').child(i).child('animal').get().val())
+            descr.append(database.child('complaints').child(i).child('descrp').get().val())
+        complain_list = zip(addr,anim,descr)
         context = {
-            'complaint_list' : complaint_list,
+            'complaint_list' : complain_list,
             'email' : mailid
         }
         return render(request,'feralissues/complaint.html',context)
@@ -63,60 +49,6 @@ def complaint(request):
         message = "Oops! User logged out."
         context = {
             'message' : message
-        }
-        return render(request,'authentication/login.html',context)
-
-def report(request):
-    #print("timepass")
-    try:
-        idtoken = request.session['uid']
-        a = authenticate.get_account_info(idtoken)
-        a = a['users']
-        a = a[0]
-        mailid = a['email']
-        a = a['localId']
-        allusers = database.child('users').shallow().get().val()
-        #print(allusers)
-        if allusers != None:
-            users = []
-            for i in allusers:
-                if i != a:
-                    users.append(i)
-            user_complaints = []
-            complaintName = []
-            animal = []
-            address = []
-            description = []
-            for i in users:
-                allusercomplaints = database.child('users').child(i).child('complaints').shallow().get().val()
-                if allusercomplaints != None:
-                    #print(allusercomplaints)
-                    user_complaints.append(allusercomplaints)
-                    #print(user_complaints[-1])
-                    for j in user_complaints[-1]:
-                        print(j)
-                        ename = database.child('users').child(i).child('complaints').child(j).child('complaint').get().val()
-                        dat = database.child('users').child(i).child('complaints').child(j).child('animal').get().val()
-                        addr = database.child('users').child(i).child('complaints').child(j).child('address').get().val()
-                        descr = database.child('users').child(i).child('complaints').child(j).child('description').get().val()
-                        complaintName.append(ename)
-                        animal.append(dat)
-                        address.append(addr)
-                        description.append(descr)
-                else:
-                    continue
-        
-            complaint_list = zip(complaintName,animal,address,description)
-        context = {
-			'email' : mailid,
-            'complaint_list' : complaint_list
-		}
-        return render(request,'feralissues/report.html',context)
-
-    except:
-        message = "Oops! User has been logged out. Please log in again."
-        context = {
-			'message' : message
         }
         return render(request,'authentication/login.html',context)
 

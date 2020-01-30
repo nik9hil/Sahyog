@@ -1,15 +1,28 @@
 {% extends 'home/base.html' %}
 {% block content %}
-<div class="container">
-	<br><h3>My Complaints</h3><hr>
+<div class="row">
 	{% if complaint_list %}
-		{% for complaintName,animal,address,description,time in complaint_list %}
-			<li><b>NAME:</b>{{complaintName}}</li>
-			<b>Animal:</b>{{animal}}<br>
-			<b>ADDRESS:</b>{{address}}<br><b>DESCRIPTION:</b>{{description}}<br>
-		{% endfor %}
+			<!-- INDIVIDUAL EVENT -->
+		    <main role="main" class="col-md-5 ml-sm-auto col-lg-10 px-10"><br>
+		    	{% for addr,anim,descr in complaint_list %}
+					<div class="row w-100">
+				        <div class="col-md-10">
+				            <div class="card border shadow mx-sm-1 p-3" style="background-image: url('')">
+				            	<p></p>
+				                <div class="card border shadow text-info p-2 my-card" >
+				                	<h4 class="text-center" aria-hidden="true"><b style="color:black">{{anim}}</b></h4>
+				                </div>
+				                <div class="text-info text-center mt-3"><h5><a href=""style="color:black">{{descr}}</a></h5></div>
+				                <br><p>{{addr}}</p>
+				                <p></p>
+			            	</div>
+				        </div>
+				    </div>
+				    <hr>
+				{% endfor %}
+		    </main>
 	{% else %}
-		<h4>You have no complaints.</h4>
+		<h4>You have no animals for adoption.</h4>
 	{% endif %}
 </div>
 {% endblock content %}
