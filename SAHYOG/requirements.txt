@@ -1,8 +1,5 @@
 pyrebase
-<<<<<<< HEAD
 django==2.1.5
 gunicorn==19.9.0
 djangorestframework==3.9.1
-=======
 django-chartjs
->>>>>>> d9fc2dfe4053b804a3b44de20a0576f3fd101b26
