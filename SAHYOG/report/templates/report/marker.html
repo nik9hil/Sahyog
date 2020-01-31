@@ -1,3 +1,4 @@
+{% load static %}
 <head>
 <meta charset="utf-8" />
 <title>SAHYOG</title>
@@ -29,8 +30,7 @@ map.addSource('earthquakes', {
 type: 'geojson',
 // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
 // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-data:
-'../../earth.json',
+data:"{% static 'report/js/earth.json' %}",
 cluster: true,
 clusterMaxZoom: 14, // Max zoom to cluster points on
 clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
@@ -124,19 +124,14 @@ map.getCanvas().style.cursor = '';
 });
 });
 
-var myLayer = L.mapbox.featureLayer().addTo(map);
-myLayer.on('layeradd', function(e) {
-    var marker = e.layer,
-        feature = marker.feature;
-
-    // Create custom popup content
-    var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.title + '">'+
-                        '</a>';
-
-    // http://leafletjs.com/reference.html#popup
-    marker.bindPopup(popupContent,{
-        closeButton: false,
-        minWidth: 320
+map.on('load', function(e) {
+    //var marker = e.layer,
+        //feature = marker.feature;
+        map.on('click', 'unclustered-point', function (e) {
+    new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(e.features[0].properties.title)
+    .addTo(map);
     });
 });
 </script>
